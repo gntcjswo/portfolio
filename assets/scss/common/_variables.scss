@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+$skin: '/assets';
+
+// color
+$color-base: #e51550;       // 기업 아이덴티티 색
+$color-base-hover: lighten($color-base, 5%); // 버튼일시 hover 배경색
+$color-base-hover-alpha: rgba($color-base, .7); // 버튼일시 hover 배경색 불투명 스타일
+$color-point: #ff0302;      // 강조색
+$font-color-base: #151515;     // 일반 글자색 => 메뉴색
+$wrapper-bg-color: #fff;    // wrapper 배경색 (사이트 배경색)
+
+// font
+$font-family-base: 'Noto Sans KR', sans-serif;
+$font-family-noto: 'Noto Sans KR', sans-serif;
+
+// size
+// $font-size-base: 1rem !default;
+
+// 사이트 구성
+$site-config-header-top: block;             // header 상단(sns, 로그인, 사이트맵, 다국어)영역 (사용:block, 사용안함:none)
+$site-config-header-sns: block;             // header 상단 sns 링크 (사용:block, 사용안함:none)
+$site-config-header-member: flex;   // header 상단 로그인 등 회원관련 (사용:flex, 사용안함:none)
+$site-config-header-language: none; // header 상단 다국어 (사용:inline-block, 사용안함:none)
+$site-config-footer-logo: block;            // footer 로고 (사용:block, 사용안함:none)
+$site-config-footer-family-site: block;     // footer family site (사용:block, 사용안함:none)
+
+// input, textarea, select
+$input-placeholder-color: #b1b1b1;           // input, textarea의 placeholder 글자색
+$input-placeholder-color-focus: transparent; // input, textarea의 focus일때 placeholder 글자색
+$input-bg-color: #fff;                       // input, textarea, select의 배경색
+$input-bor-color: #ccd0d7;                   // input, textarea, select의 border색
+$input-bor-color-focus: $color-base;         // input, textarea, select의 focus일때 border색
+$input-color: #414141;                       // input, textarea, select의 글자색
+
+// input[checkbox, radio]
+$input-checkbox-bg-color: #fff;                 // 배경색
+$input-checkbox-bor-color: #bebebe;             // border색
+$input-checkbox-bg-color-checked: $color-base;  // 체크 했을때 배경색
+$input-checkbox-bor-color-checked: $color-base; // 체크 했을때 border색
+$input-checkbox-color-checked: #fff;            // 체크표시 아이콘 글자색(v표시)
+$input-checkbox-label-color: #666;              // 라벨 글자색
+
+// shop - input
+$shop-input-bg-color: #f5f5f5;                       // input, textarea, select의 배경색
+$shop-input-bor-color: #f5f5f5;                   // input, textarea, select의 border색
+$shop-input-color: #666;                       // input, textarea, select의 글자색
+
+// member - 취소(왼쪽)버튼, 가입 or 회원정보 수정(오른쪽)버튼, 회원탈퇴 버튼
+$member-btn-cancel-bg-color: #fff;                      // 왼쪽 버튼 배경색
+$member-btn-cancel-bg-color-hover: #f7f7f7;             // 왼쪽 버튼 hover 배경색
+$member-btn-cancel-bor-color: #d3d3d3;                  // 왼쪽 버튼 border색
+$member-btn-cancel-bor-color-hover: #d3d3d3;            // 왼쪽 버튼 hover border색
+$member-btn-cancel-color: #444;                         // 왼쪽 버튼 글자색
+$member-btn-cancel-color-hover: #444;                   // 왼쪽 버튼 hover 글자색
+$member-btn-confirm-bg-color: $color-base;              // 오른쪽 버튼 배경색
+$member-btn-confirm-bg-color-hover: $color-base-hover;  // 오른쪽 버튼 hover 배경색
+$member-btn-confirm-bor-color: $color-base;             // 오른쪽 버튼 border색
+$member-btn-confirm-bor-color-hover: $color-base-hover; // 오른쪽 버튼 hover border색
+$member-btn-confirm-color: #fff;                        // 오른쪽 버튼 글자색
+$member-btn-confirm-color-hover: #fff;                  // 오른쪽 버튼 hover 글자색
+$member-btn-withdrawal-bg-color: #fff;                  // 회원탈퇴 버튼 배경색
+$member-btn-withdrawal-bg-color-hover: #f7f7f7;         // 회원탈퇴 버튼 hover 배경색
+$member-btn-withdrawal-bor-color: #d3d3d3;              // 회원탈퇴 버튼 border색
+$member-btn-withdrawal-bor-color-hover: #d3d3d3;        // 회원탈퇴 버튼 hover border색
+$member-btn-withdrawal-color: #444;                     // 회원탈퇴 버튼 글자색
+$member-btn-withdrawal-color-hover: #444;               // 회원탈퇴 버튼 hover 글자색
+
+// board - 일반, 웹진, 메뉴얼, 서브페이지의 테이블
+$th-bg: #f9f9f9;            // th 배경색 (767px 이하는 적용 안함)
+$th-color: #151515;            // th 글자색
+$td-bg: #fff;               // td 배경색 (767px 이하는 적용 안함)
+$td-color: #151515;            // td 글자색, 링크(제목 부분) 글자색
+$th-bor-color: #dedede;     // th 아래 border 색
+$td-bor-color: #dedede;     // td 아래 border 색
+$td-link-color-hover: #000; // 링크(제목 부분) hover 글자색
+
+// board - 갤러리, 동영상, 이벤트, 브로셔
+$gallery-img-bor-color: #dadada; // 썸네일 border 색
+$gallery-bor-color: #dadada;     // 아래 border 색
+$gallery-title-color: #333;      // 제목 글자색
+$gallery-date-color: #444;       // 날짜 글자색
+$gallery-link-color-hover: #000; // 제목 hover 글자색
+
+// board - view 페이지
+$view-btn-left-bg: #d3d3d3;    // 답글, 수정, 삭제 버튼 배경색
+$view-btn-left-color: #464646; // 답글, 수정, 삭제 버튼 글자색
+$view-btn-right-bg: #464646;   // 목록 버튼 배경색
+$view-btn-right-color: #fff;   // 목록 버튼 글자색
+
+// board - faq 아코디언
+$faq-q-bg: #f7f7f7;                // 질문 배경색
+$faq-q-bg-hover: #efefef;          // 질문 hover 배경색
+$faq-q-color: #333;                // 질문 글자색
+$faq-q-icon-color: #818181;        // 질문 아이콘(Q.) 글자색
+$faq-q-icon-color-on: $color-base; // 질문 on일때 아이콘(Q.) 글자색
+$faq-a-bg: #fff;                   // 답변 배경색
+$faq-a-color: #444;                // 답변 글자색
+$faq-a-icon-color: $color-point;   // 답변 아이콘(A.) 글자색 (on에서만 보이므로 따로 on일때를 구분하지 않음)
+$faq-arrow-color: #999;            // 우측 화살표 아이콘 글자색
+$faq-arrow-color-on: #111;         // 질문 on일때 우측 화살표 아이콘 글자색
+$faq-bor-color: #d7d7d7;           // border색
+
+// Breakpoints
+$breakpoint-sm: 575px;
+$breakpoint-md: 767px;
+$breakpoint-lg: 991px;
+$breakpoint-xl: 1199px;
+
+// layout
+$inner-max-width: 1760px; // 1720px(inner넓이) + 40px(좌우 패딩 20px)
+
+// main visual
+$main-pc-visual-height: 664px;                  // 메인 비주얼 슬라이드 PC 높이 (디자인 이미지 사이즈에 맞게 수정)
+$main-tablet-visual-height: 664px;                  // 메인 비주얼 슬라이드 태블릿 높이 (디자인 이미지 사이즈에 맞게 수정)
+$main-mobile-visual-height: 520px; // 메인 비주얼 슬라이드 모바일 높이 (84px은 header 높이)
+
+// sub visual
+$sub-pc-visual-height: 366px;     // 서브 비주얼 PC 높이 (디자인 이미지 사이즈에 맞게 수정)
+$sub-tablet-visual-height: 280px; // 서브 비주얼 태블릿 높이
+$sub-mobile-visual-height: 200px; // 서브 비주얼 모바일 높이
+
+// header (pc)
+$header-pc-bg-color: #fff;                                     // header 배경색
+$header-pc-sta-bg-color: #fff;                          // header 상단 배경색
+$header-pc-sta-menu-bg-color: #fff;                     // header 상단 메뉴 배경색
+$header-pc-sta-menu-bg-color-hover: #eee;         // header 상단 메뉴 hover 배경색
+$header-pc-sta-menu-bor-color: rgba(0, 0, 0, 0.3);       // header 상단 메뉴 border색(메뉴 사이 구분선)
+$header-pc-sta-menu-lang-bg-color: rgba(0, 0, 0, .1);          // header 상단 언어선택메뉴 배경색
+$header-pc-sta-menu-lang-bg-color-hover: $color-base-hover;    // header 상단 언어선택메뉴 hover 배경색
+$header-pc-sta-menu-lang-bor-color: rgba(0, 0, 0, .15);        // header 상단 언어선택메뉴 depth2 border색(메뉴 사이 구분선)
+$header-pc-sta-menu-color: rgba(#151515, .7);                               // header 상단 메뉴 글자색
+$header-pc-sta-menu-color-hover: #151515;                         // header 상단 메뉴 hover 글자색
+$header-pc-sitemap-btn-color: $color-base;                            // header 사이트맵 아이콘(햄버거 메뉴) 버튼색
+$header-pc-sitemap-btn-color-on: $color-base;                         // header 사이트맵 아이콘(햄버거 메뉴) on 일때 버튼색
+$header-pc-sitemap-bg-color: rgba(42, 44, 54, 0.9);            // header 사이트맵 배경색
+$header-pc-sitemap-bor-color: rgba(205, 208, 215, 0.3);        // header 사이트맵 border색
+$header-pc-sitemap-1depth-color: #fff;                         // header 사이트맵 1depth 글자색
+$header-pc-sitemap-1depth-color-hover: #fff;                   // header 사이트맵 1depth hover 글자색
+$header-pc-sitemap-2depth-color: #c0c2d2;                      // header 사이트맵 2depth 글자색
+$header-pc-sitemap-2depth-color-hover: #fff;                   // header 사이트맵 2depth hover 글자색
+$header-pc-sitemap-3depth-color: #c0c2d2;                      // header 사이트맵 3depth 글자색
+$header-pc-sitemap-3depth-color-hover: #fff;                   // header 사이트맵 3depth hover 글자색
+
+// header 높이
+$header-sta-height: 92px;        // header 상단(sns, 로그인, 사이트맵, 다국어)영역 pc 높이
+$header-sta-tablet-height: 35px;        // header 상단(sns, 로그인, 사이트맵, 다국어)영역 태블릿 높이
+$header-sta-mobile-height: 28px; // header 상단(sns, 로그인, 사이트맵, 다국어)영역 모바일 높이
+$header-pc-height: 85px;        // header pc 높이 (1depth의 line-height 값)
+$header-tablet-height: 80px;     // header 태블릿 높이 (.header-bottom의 height 값)
+$header-mobile-height: 55px;     // header 모바일 높이 (.header-bottom의 height 값)
+$contents-pc-padding-top: calc(#{$header-sta-height} + #{$header-pc-height} + 1px);                // header가 fixed일때 #contents의 padding-top 값 (pc)
+$contents-tablet-padding-top: calc(#{$header-sta-tablet-height} + #{$header-tablet-height} + 1px);        // header가 fixed일때 #contents의 padding-top 값 (태블릿)
+$contents-mobile-padding-top: calc(#{$header-sta-mobile-height} + #{$header-mobile-height} + 1px); // header가 fixed일때 #contents의 padding-top 값 (모바일)
+
+// header GNB (pc)
+$header-pc-1depth-color: #3a3d4a;                              // 1depth 글자색
+$header-pc-1depth-color-hover: $color-base;                    // 1depth hover 글자색
+$header-pc-2depth-bor-color: rgba(51, 51, 51, 0.7);            // 2depth border색(메뉴 사이 구분선)
+$header-pc-2depth-bor-top-color: $color-base;                  // 2depth border-top색
+$header-pc-2depth-bg-color: rgba(0, 0, 0, 0.7);                // 2depth 배경색
+$header-pc-2depth-bg-color-hover: #000;                        // 2depth hover 배경색
+$header-pc-2depth-color: #fff;                                 // 2depth 글자색
+$header-pc-2depth-color-hover: #fff;                           // 2depth hover 글자색
+$header-pc-2depth-arrow-color: rgba(255, 255, 255, 0.8);       // 2depth 화살표 아이콘색 (3depth 있을때)
+$header-pc-2depth-arrow-color-hover: rgba(255, 255, 255, 0.8); // 2depth 화살표 hover 아이콘색 (3depth 있을때)
+$header-pc-3depth-bor-color: rgba(76, 76, 76, 0.7);            // 3depth border색(메뉴 사이 구분석)
+$header-pc-3depth-bg-color: rgba(6, 6, 6, 0.7);                // 3depth 배경색
+$header-pc-3depth-bg-color-hover: #000;                        // 3depth hover 배경색
+$header-pc-3depth-color: #fff;                                 // 3depth 글자색
+$header-pc-3depth-color-hover: #fff;                           // 3depth hover 글자색
+
+// header (mobile)
+$header-mobile-gnb-top-color: $color-base;  // header gnb 상단 배경색
+$header-mobile-gnb-bg-color: #fff;          // header gnb 배경색
+$header-mobile-btn-color: #333;             // header gnb 햄버거메뉴 버튼색
+$header-mobile-btn-color-on: #fff;          // header gnb 햄버거메뉴 on 버튼색
+$header-mobile-1depth-bg-color: #fff;       // 1depth 배경색
+$header-mobile-1depth-bg-color-on: #3f3f40; // 1depth on 배경색
+$header-mobile-1depth-bor-color: #ddd;      // 1depth border색
+$header-mobile-1depth-color: #333;          // 1depth 글자색
+$header-mobile-1depth-color-on: #fff;       // 1depth on 글자색
+$header-mobile-2depth-bg-color: #e8e8e8;    // 2depth, 3depth 배경색
+$header-mobile-2depth-bor-color: #d1d1d1;   // 2depth, 3depth border색
+$header-mobile-2depth-color: #333;          // 2depth, 3depth 글자색

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+// sm: 575
+// md: 767
+// lg: 991
+// xl: 1199
+
+@mixin bp-max($breakpoint) {
+	@media (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin bp-min($breakpoint) {
+	@media (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+// max-width: 575px
+@mixin sm-max {
+	@media (max-width: #{$breakpoint-sm}) {
+		@content;
+	}
+}
+
+// min-width: 576px
+@mixin sm-min {
+	@media (min-width: #{$breakpoint-sm + 1px}) {
+		@content;
+	}
+}
+
+// max-width: 767px
+@mixin md-max {
+	@media (max-width: #{$breakpoint-md}) {
+		@content;
+	}
+}
+
+// min-width: 768px
+@mixin md-min {
+	@media (min-width: #{$breakpoint-md + 1px}) {
+		@content;
+	}
+}
+
+// max-width: 991px
+@mixin lg-max {
+	@media (max-width: #{$breakpoint-lg}) {
+		@content;
+	}
+}
+
+// min-width: 992px
+@mixin lg-min {
+	@media (min-width: #{$breakpoint-lg + 1px}) {
+		@content;
+	}
+}
+
+// max-width: 1199px
+@mixin xl-max {
+	@media (max-width: #{$breakpoint-xl}) {
+		@content;
+	}
+}
+
+// min-width: 1200px
+@mixin xl-min {
+	@media (min-width: #{$breakpoint-xl + 1px}) {
+		@content;
+	}
+}
+
+// variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 #contents의 padding-top 변경
+@mixin contents-pc-padding-top($site-config-header-top) {
+	@if $site-config-header-top == block {
+		padding-top: $contents-pc-padding-top; // header 상단 높이 + .header-bottom 높이
+	}
+	@else if $site-config-header-top == none {
+		padding-top: $header-pc-height; // .header-bottom 높이
+	}
+}
+@mixin contents-tablet-padding-top($site-config-header-top) {
+	@if $site-config-header-top == block {
+		padding-top: $contents-tablet-padding-top; // header 상단 높이 + .header-bottom 높이
+	}
+	@else if $site-config-header-top == none {
+		padding-top: $header-tablet-height; // .header-bottom 높이
+	}
+}
+@mixin contents-mobile-padding-top($site-config-header-top) {
+	@if $site-config-header-top == block {
+		padding-top: $contents-mobile-padding-top; // header 상단 높이 + .header-bottom 높이
+	}
+	@else if $site-config-header-top == none {
+		padding-top: $header-mobile-height; // .header-bottom 높이
+	}
+}
+
+// variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 header 상단 높이 0처리
+@mixin sta-height-zero($site-config-header-top) {
+	@if $site-config-header-top == none {
+		height: 0 !important;
+	}
+}
+// variables.scss에서 header 상단(sns, 로그인, 사이트맵, 다국어)영역을 사용안함(none)으로 설정했을 경우 header.fixed top 0으로 고정
+@mixin header-fixed-top-zero($site-config-header-top) {
+	@if $site-config-header-top == none {
+		top: 0 !important;
+	}
+}
+
+@mixin transition($time: .2s all ease-in-out) {
+	@each $prefix in -moz-, -o-, -webkit-, '' {
+		#{$prefix}transition: $time;
+	}
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin transform($args...) {
+	-webkit-transform: $args;
+	-ms-transform: $args;
+	transform: $args;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}

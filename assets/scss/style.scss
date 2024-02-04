@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@import "common/variables";
+@import "common/mixins";
+@import "common/placeholders"; // extend
+
+@import "common/base"; // reset
+
+@import "import/common"; // 공통요소 + header + footer
+@import "import/main";
