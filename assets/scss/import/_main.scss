@@ -383,6 +383,7 @@
 .showcase_wrap {
     display: flex;
     align-items: center;
+    width: 100%;
     max-width: 1480px;
     padding: 0 20px;
     margin: 0 auto;
@@ -422,12 +423,16 @@
                     font-size: 0;
                     height: 28.125rem;
                     box-shadow: 0.4375rem 0.5625rem 1.875rem rgba(0,0,0,0.7);
+                    overflow: hidden;
                     
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                         object-position: top center;
+                        transform: scale(1.5);
+
+                        @include transition(1s transform ease-out);
                     }
                 }
             }
@@ -437,7 +442,8 @@
                 padding-left: 3.125rem;
 
                 .txtbox__inner {
-                    width: 60%;
+                    width: 100%;
+                    max-width: 400px;
                     background-color: rgba(0,0,0,0.8);
                     padding: 10px;
                     color: #fff;
@@ -492,13 +498,25 @@
         }
         
         &.swiper-slide-active {
-            .showcase_inbox .txtbox .txtbox__inner {
-                transform: translateX(0);
+            .showcase_inbox {
+                .imgbox {
+                    figure {
+                        img {
+                            transform: scale(1);
+                        }
+                    }
+                }
+
+                .txtbox .txtbox__inner {
+                    transform: translateX(0);
+                }
             }
 
             &~ .swiper-slide {
-                .showcase_inbox .txtbox .txtbox__inner {
-                    transform: translateX(70%);
+                .showcase_inbox {
+                    .txtbox .txtbox__inner {
+                        transform: translateX(70%);
+                    }
                 }
             }
         }
