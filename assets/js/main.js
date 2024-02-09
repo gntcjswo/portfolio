@@ -82,14 +82,21 @@ $(function(){
 	});
 
 	// showcase slider
-	var showcaseSlider = new Swiper(".showcase-container", {
-		slidesPerView: 'auto',
+	var showcaseSlider = new Swiper('.showcase-container', {
+		slidesPerView: 1,
 		spaceBetween: 20,
 		watchSlidesProgress: true,
 		// slideToClickedSlide: true,
 		// centeredSlides: true,
 		// loop: true,
-		speed: 500,
+		speed: 1000,
+		observer: true,
+		observeParents: true,
+		mousewheel: {
+			releaseOnEdges: true,
+		},
+		// freeMode: true,
+		scrollContainer:true,
 		scrollbar:{
 			el : '.showcase-scrollbar',
 			draggable: true,
@@ -106,6 +113,36 @@ $(function(){
 			}
 		},
 	});
+
+	$('.showcase-container').on('wheel', function (e) {
+		e.preventDefault();
+
+		var _swiperWrapper = $(this).find('.swiper-wrapper');
+		var _swiperScrollbar = $(this).find('.swiper-scrollbar-drag');
+
+		_swiperWrapper.addClass('scrolling');
+		_swiperScrollbar.addClass('scrolling');
+
+		clearTimeout($.data(this, 'timer'));
+		$.data(this, 'timer', setTimeout(function() {
+			_swiperWrapper.removeClass('scrolling');
+			_swiperScrollbar.removeClass('scrolling');
+		}, 250));
+	});
+
+	showcaseSlider.on('progress', function (swiper, progress) {
+		if (progress != 0 && !scrollFlag) {
+			scrollFlag = true;
+		}
+	});
+	showcaseSlider.on('reachBeginning', function () {
+		setTimeout(function(){
+			scrollFlag = false;
+		}, 1000);
+	});
+	// showcaseSlider.on('reachEnd', function () {
+	// 	console.log('scrollFlag', scrollFlag);
+	// });
 
 	cursorText();
 
@@ -332,7 +369,13 @@ section03Motion.to('#section02', .5, {
 .to('.fix_section__p > span', 1, {
 	text: 'By Woosung',
 	ease: 'power2.inOut',
-}, '-=1');
+}, '-=1')
+.from('.showcase_wrap', 1, {
+	x: 50,
+	autoAlpha: 0,
+	ease: 'power3.out',
+	// onComplete: ()=>{$('.showcase-container').update()}
+});
 
 loadingMotion.to('.loading_section', 0, {
 	display: 'flex',
@@ -472,7 +515,6 @@ window.addEventListener('wheel', function(event){
 
 $(function(){
 	$('.fix_section__nav > button').on('click', function(){
-		console.log('click');
 		if ($(this).index() == 0) {
 			loadingMotion.totalProgress(0).play();
 			setTimeout(function(){
@@ -493,6 +535,7 @@ $(function(){
 				section01Motion.totalProgress(1).play();
 				section02Motion.totalProgress(1).play();
 				section03Motion.totalProgress(0).play();
+				scrollFlag = true;
 			}, 1200);
 		}
 	});
