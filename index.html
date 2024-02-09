@@ -25,10 +25,13 @@
     <script src="/assets/js/lib/gsap-public/minified/TextPlugin.min.js" type="text/javascript"></script>
 	<script src="/assets/js/lib/gsap-public/minified/ScrollToPlugin.min.js" type="text/javascript"></script>
 
-	<!-- smoothScroll -->
-    <script type="text/javascript" src="/assets/js/lib/smoothScroll/smoothScroll.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/fonts/fonts.css" />
+    <script src="/assets/js/lib/teletype/jquery.teletype.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/fonts/fonts.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     
 	<script type="text/javascript" src="/assets/js/custom.js"></script>
@@ -80,6 +83,7 @@
 
         <div id="section02" class="port_section section_02" data-section="2">
             <div class="service_comment">
+                <h3 class="cursor_txt" title="very Awesome^2000~15; more Beautiful^2000~16; more Interactive^2000~16"></h3>
                 <p>
                     <span style="color: #08548d">웹 사이트 퍼블리싱</span> 및 스크립트를 이용한 <span style="color: #08548d">인터랙션 개발</span>, 프론트 단에서 구현 가능한 모든 작업을 진행하고 있습니다.<br />
                     그리고 프레임 워크를 이용한 <span style="color: #08548d">프론트 엔드 개발</span>을 준비 중에 있습니다. 자세한 내역은 <span style="color: #08548d">아래의 리스트</span>를 확인해 주시기 바랍니다.
@@ -139,7 +143,24 @@
 
         <div id="section03" class="port_section section_03" data-section="3">
             <div class="showcase_wrap">
-                
+                <div class="showcase-container swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="showcase_inbox">
+                                <figure>
+                                    <img src="http://tscnsshop.uni-net.co.kr/user/banner/11" alt="" />
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <p>반가워요.</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <p>행복하세요.</p>
+                        </div>
+                    </div>
+                    <div class="showcase-scrollbar swiper-scrollbar"></div>
+                </div>
             </div>
         </div>
 

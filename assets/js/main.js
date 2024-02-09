@@ -81,6 +81,34 @@ $(function(){
 		}
 	});
 
+	// showcase slider
+	var showcaseSlider = new Swiper(".showcase-container", {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		watchSlidesProgress: true,
+		// slideToClickedSlide: true,
+		// centeredSlides: true,
+		// loop: true,
+		speed: 500,
+		scrollbar:{
+			el : '.showcase-scrollbar',
+			draggable: true,
+			dragSize: 'auto',
+			hide: false
+		},
+		// navigation: {
+		// 	nextEl: ".showcase__next",
+		// 	prevEl: ".showcase__prev"
+		// },
+		breakpoints: {
+			768: {
+				spaceBetween: 35
+			}
+		},
+	});
+
+	cursorText();
+
 });
 
 section00Motion.to('.fix_section', 0, {
@@ -334,14 +362,14 @@ loadingMotion.to('.loading_section', 0, {
 }, '+=.1')
 .to('.loading_section > h3', 0, {
 	display: 'block',
-	text: '화려해야',
+	text: '화려하게',
 }, '+=.2')
 .to('.loading_section > h3', 0, {
 	display: 'none'
 }, '+=.1')
 .to('.loading_section > h3', 0, {
 	display: 'block',
-	text: '제맛',
+	text: '와우!',
 }, '+=.2')
 .to('.loading_section > h3', 0, {
 	display: 'none'
@@ -357,6 +385,24 @@ loadingMotion.to('.loading_section', 0, {
 .to('.loading_section > h3', 0, {
 	text: '화면',
 })
+
+function cursorText(){
+    setTimeout(function(){
+		$('.cursor_txt').each(function() {
+			var items = $(this).attr('title') + ';' + $(this).text();
+			$(this).empty().attr('title', '').teletype({
+				text: $.map(items.split(';'), $.trim),
+				typeDelay: 20,
+				backDelay: 10,
+				cursor: '_',
+				delay: 1000,
+				preserve: false,
+				prefix: '',
+				loop: 0
+			});
+		});
+	},1000)
+}
 
 window.addEventListener('wheel', function(event){
 	if (!scrollFlag) {

@@ -1966,12 +1966,22 @@ ul.flex_box--fc.ea-10 > li {
 
 .service_comment {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   bottom: 60vh;
   left: 20vw;
   width: 80vw;
+  height: 40vh;
   max-width: 1380px;
   padding-right: 20px;
   padding-bottom: 20px;
+}
+.service_comment h3 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 10px;
 }
 .service_comment p {
   font-size: 18px;
