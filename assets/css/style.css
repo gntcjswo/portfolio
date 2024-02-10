@@ -1993,12 +1993,12 @@ ul.flex_box--fc.ea-10 > li {
   background-color: #fff;
 }
 .fix_section__bg div:nth-child(4) {
-  background-color: #f7f7f7;
+  background-color: #eee;
 }
 .fix_section__bg div.active {
   opacity: 1;
   clip-path: circle(100vw);
-  transition: clip-path 1s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-clip-path 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: clip-path 1.8s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-clip-path 1.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   z-index: 1;
 }
 
