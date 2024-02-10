@@ -26,12 +26,22 @@ const section03Motion = gsap.timeline({
 	onComplete: ()=>{scrollFlag=true},
 	onReverseComplete: ()=>{scrollFlag=false}
 });
+const section04Motion = gsap.timeline({
+	onStart: ()=>{scrollFlag=true},
+	paused: true,
+	onComplete: ()=>{scrollFlag=false},
+	onReverseComplete: ()=>{scrollFlag=false}
+});
 
 const loadingMotion = gsap.timeline({
 	onStart: ()=>{scrollFlag=true},
 	paused: true,
 	onComplete: ()=>{scrollFlag=false},
 });
+
+// showcase slider
+let showcaseSlider;
+let showcaseSliderProgress;
 
 $(function(){
 	
@@ -82,7 +92,7 @@ $(function(){
 	});
 
 	// showcase slider
-	var showcaseSlider = new Swiper('.showcase-container', {
+	showcaseSlider = new Swiper('.showcase-container', {
 		slidesPerView: 1,
 		spaceBetween: 20,
 		watchSlidesProgress: true,
@@ -115,10 +125,10 @@ $(function(){
 	});
 
 	$('.showcase-container').on('wheel', function (e) {
-		e.preventDefault();
+		// e.preventDefault();
 
-		var _swiperWrapper = $(this).find('.swiper-wrapper');
-		var _swiperScrollbar = $(this).find('.swiper-scrollbar-drag');
+		let _swiperWrapper = $(this).find('.swiper-wrapper');
+		let _swiperScrollbar = $(this).find('.swiper-scrollbar-drag');
 
 		_swiperWrapper.addClass('scrolling');
 		_swiperScrollbar.addClass('scrolling');
@@ -131,7 +141,8 @@ $(function(){
 	});
 
 	showcaseSlider.on('progress', function (swiper, progress) {
-		if (progress != 0 && !scrollFlag) {
+		showcaseSliderProgress = progress;
+		if (progress != 0 && progress != 1 && !scrollFlag) {
 			scrollFlag = true;
 		}
 	});
@@ -140,9 +151,11 @@ $(function(){
 			scrollFlag = false;
 		}, 1000);
 	});
-	// showcaseSlider.on('reachEnd', function () {
-	// 	console.log('scrollFlag', scrollFlag);
-	// });
+	showcaseSlider.on('reachEnd', function () {
+		setTimeout(function(){
+			scrollFlag = false;
+		}, 1000);
+	});
 
 	cursorText();
 
@@ -189,7 +202,11 @@ section00Motion.to('.fix_section', 0, {
 	stagger: .2,
 	ease: 'power3.out',
 	// onComplete: ()=>{scrollFlag=false}
-}, '-=.5');
+}, '-=.5')
+.from('.fix_section__portfolio', 1, {
+	right: '-200px',
+	ease: 'power2.inOut'
+}, '-=1');
 
 section01Motion.to('#section01', .2, {
 	display: 'flex',
@@ -347,6 +364,7 @@ section03Motion.to('#section02', .5, {
 }, '-=1')
 .to('.fix_section__tit', 1, {
 	top: '2vh',
+	width: '410px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__line > div', 1, {
@@ -376,6 +394,76 @@ section03Motion.to('#section02', .5, {
 	ease: 'power3.out',
 	// onComplete: ()=>{$('.showcase-container').update()}
 });
+
+section04Motion.to('#section03', .5, {
+	display: 'none',
+	autoAlpha: 0,
+	zIndex: 0,
+	onStart: ()=>{
+		$('.fix_section__nav button').eq(3).addClass('active').siblings().removeClass('active');
+		$('.fix_section__bg > div').eq(3).addClass('active').siblings().removeClass('active');
+	},
+})
+.to('#section04', 0, {
+	display: 'flex',
+	autoAlpha: 1,
+	zIndex: 10
+})
+.to('.fix_section__line__line01', 1, {
+	top: '20vh',
+	left: '-50vw',
+	width: '200vw',
+	ease: 'power2.inOut'
+})  
+.to('.fix_section__line__line02', 1, {
+	top: '80vh',
+	left: '-50vw',
+	width: '200vw',
+	ease: 'power2.inOut'
+}, '-=1')
+.to('.fix_section__line__line03', 1, {
+	top: 'calc(100vh - 2px)',
+	left: '-50vw',
+	width: '200vw',
+	height: '2px',
+	ease: 'power2.inOut'
+}, '-=1')
+.to('.fix_section__tit', 1, {
+	left: '-410px',
+	ease: 'power2.inOut'
+}, '-=1')
+.to('.fix_section__line > div', 1, {
+	'--element-color': '#e51550',
+	ease: 'power2.inOut'
+}, '-=1')
+.to('.fix_section__portfolio', 1, {
+	top: 'calc(20vh + 2px)',
+	right: '50vw',
+	width: '700px',
+	height: 'calc(60vh - 2px)',
+	xPercent: 50,
+	ease: 'power2.inOut'
+}, '-=1')
+.to('.fix_section__line', 1, {
+	rotate: -20,
+	ease: 'power2.inOut'
+})
+.to('.fix_section__portfolio', 1, {
+	rotate: -20,
+	backgroundColor: '#fff',
+	boxShadow: '-3px 3px 20px rgba(0,0,0,.1)',
+	ease: 'power2.inOut'
+}, '-=1')
+.to('.fix_section__portfolio__inbox', 1, {
+	rotate: 20,
+	ease: 'power2.inOut'
+}, '-=1')
+.to('.port_comment_box', 1, {
+	autoAlpha: 1,
+	height: 'auto',
+	marginTop: 30,
+	ease: 'power2.inOut'
+}, '-=1');
 
 loadingMotion.to('.loading_section', 0, {
 	display: 'flex',
@@ -467,7 +555,13 @@ window.addEventListener('wheel', function(event){
 						break;
 	
 					case 3:
+						if (showcaseSliderProgress != 0) return false;
 						section03Motion.reverse();
+						break;
+
+					case 4:
+						showcaseSlider.slideTo(0, 0, false);
+						section04Motion.reverse();
 						break;
 				
 					default:
@@ -482,10 +576,16 @@ window.addEventListener('wheel', function(event){
 						break;
 	
 					case 2:
+						showcaseSlider.slideTo(0, 0, false);
 						section03Motion.play();
 						break;
 	
 					case 3:
+						if (showcaseSliderProgress != 1) return false;
+						section04Motion.play();
+						break;
+
+					case 4:
 						
 						break;
 				
@@ -518,6 +618,7 @@ $(function(){
 		if ($(this).index() == 0) {
 			loadingMotion.totalProgress(0).play();
 			setTimeout(function(){
+				section04Motion.reverse().totalProgress(0);
 				section03Motion.reverse().totalProgress(0);
 				section02Motion.reverse().totalProgress(0);
 				section01Motion.totalProgress(0).play();
@@ -525,6 +626,7 @@ $(function(){
 		} else if ($(this).index() == 1) {
 			loadingMotion.totalProgress(0).play();
 			setTimeout(function(){
+				section04Motion.reverse().totalProgress(0);
 				section03Motion.reverse().totalProgress(0);
 				section01Motion.totalProgress(1).play();
 				section02Motion.totalProgress(0).play();
@@ -532,9 +634,20 @@ $(function(){
 		} else if ($(this).index() == 2) {
 			loadingMotion.totalProgress(0).play();
 			setTimeout(function(){
+				showcaseSlider.slideTo(0, 0, false);
+				section04Motion.reverse().totalProgress(0);
 				section01Motion.totalProgress(1).play();
 				section02Motion.totalProgress(1).play();
 				section03Motion.totalProgress(0).play();
+				scrollFlag = true;
+			}, 1200);
+		} else if ($(this).index() == 3) {
+			loadingMotion.totalProgress(0).play();
+			setTimeout(function(){
+				section01Motion.totalProgress(1).play();
+				section02Motion.totalProgress(1).play();
+				section03Motion.totalProgress(1).play();
+				section04Motion.totalProgress(0).play();
 				scrollFlag = true;
 			}, 1200);
 		}

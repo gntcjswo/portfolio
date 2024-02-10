@@ -1767,6 +1767,80 @@ ul.flex_box--fc.ea-10 > li {
   left: calc(50vw + 60px);
 }
 
+.fix_section__portfolio {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  width: 185px;
+  max-width: 100%;
+  background-color: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 90;
+}
+.fix_section__portfolio .fix_section__portfolio__inbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.fix_section__portfolio a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  border: 1px solid #eb2860;
+  background-color: #e51550;
+  border-radius: 5px;
+  color: #fff;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.fix_section__portfolio a:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  background-color: #ff799f;
+  clip-path: inset(10px 20px 10px calc(100% - 55px) round 38px);
+  transition: 0.65s clip-path cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.fix_section__portfolio a:hover:before {
+  clip-path: inset(0 round 5px);
+}
+.fix_section__portfolio a span {
+  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+}
+.fix_section__portfolio a img {
+  position: relative;
+  margin-left: 20px;
+  width: 20px;
+}
+.fix_section__portfolio .port_comment_box {
+  margin-top: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.fix_section__portfolio .port_comment_box p {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  color: #121212;
+}
+
 .loading_section {
   position: fixed;
   display: flex;
@@ -1880,6 +1954,9 @@ ul.flex_box--fc.ea-10 > li {
 .fix_section__nav button:nth-child(3).active {
   background-color: #000;
 }
+.fix_section__nav button:nth-child(4).active {
+  background-color: #000;
+}
 
 .fix_section__bg {
   position: fixed;
@@ -1914,6 +1991,9 @@ ul.flex_box--fc.ea-10 > li {
 }
 .fix_section__bg div:nth-child(3) {
   background-color: #fff;
+}
+.fix_section__bg div:nth-child(4) {
+  background-color: #f7f7f7;
 }
 .fix_section__bg div.active {
   opacity: 1;
