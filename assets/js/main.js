@@ -213,7 +213,7 @@ section01Motion.to('#section01', .2, {
 	autoAlpha: 1,
 	zIndex: 10,
 	onStart: ()=>{
-		console.log('start');
+		// console.log('start');
 		$('.fix_section__nav button').eq(0).addClass('active').siblings().removeClass('active');
 		$('.fix_section__bg > div').eq(0).addClass('active').siblings().removeClass('active');
 	},
@@ -275,7 +275,7 @@ section02Motion.to('#section01', .5, {
 	autoAlpha: 0,
 	zIndex: 0,
 	onStart: ()=>{
-		console.log('start');
+		// console.log('start');
 		$('.fix_section__nav button').eq(1).addClass('active').siblings().removeClass('active');
 		$('.fix_section__bg > div').eq(1).addClass('active').siblings().removeClass('active');
 	},
@@ -569,7 +569,7 @@ window.addEventListener('wheel', function(event){
 				}
 			} else if (event.deltaY > 0) { // down
 				elementActive = sectionNumber;
-				console.log(sectionNumber);
+				// console.log(sectionNumber);
 				switch (sectionNumber) {
 					case 1:
 						section02Motion.play();
