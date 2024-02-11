@@ -1,5 +1,156 @@
 @charset "utf-8";
 
-:root {
-    --element-color: #000;
+.intro_section {
+	position: relative;
+
+	.intro_section__inner {
+		position: relative;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.tit {
+		position: absolute;
+		top: 16vh;
+		left: 10vw;
+		
+		h1 {
+			display: flex;
+			font-size: 60px;
+			font-weight: 700;
+			line-height: 1;
+
+			.letter_box {
+				display: block;
+
+				.letter {
+					display: block;
+					transform-style: preserve-3d;
+				}
+
+				&.letter_box--d {
+					perspective: 600px;
+
+					.letter {
+						transform-origin: center center 30px;
+					}
+				}
+				&.letter_box--e {
+					perspective: 800px;
+
+					.letter {
+						transform-origin: center center 50px;
+					}
+				}
+				&.letter_box--s {
+					perspective: 1200px;
+
+					.letter {
+						transform-origin: center center 300px;
+					}
+				}
+				&.letter_box--i {
+					perspective: 400px;
+					
+					.letter {
+						transform-origin: center center 100px;
+					}
+				}
+				&.letter_box--g {
+					perspective: 700px;
+
+					.letter {
+						transform-origin: center center 200px;
+					}
+				}
+				&.letter_box--n {
+					perspective: 600px; margin-right: 10px;
+
+					.letter {
+						transform-origin: center center 70px;
+					}
+				}
+				&.letter_box--m {
+					perspective: 300px;
+
+					.letter {
+						transform-origin: center center 40px;
+					}
+				}
+			}
+		}
+
+		.line {
+			width: calc(90vw - 50px);
+			height: 1px;
+			background-color: #000;
+			margin-top: 20px;
+		}
+	}
+
+	.txt_01 {
+		margin-top: 20px;
+		font-size: 5vw;
+		font-weight: 700;
+		line-height: 1.4;
+		letter-spacing: -0.02em;
+		color: #773ee1;
+	}
+
+	.txt_02 {
+		margin-top: 10px;
+		font-size: 3vw;
+		font-weight: 700;
+		line-height: 1.4;
+		color: #ab3ee1;
+	}
+
+	.line_01 {
+		position: absolute;
+		top: calc(16vh + 81px);
+		right: 50px;
+		width: 30px;
+		height: calc(84vh - 81px);
+		background-color: #773ee1;
+	}
+
+	.line_02 {
+		position: absolute;
+		right: 80px;
+		bottom: 50px;
+		width: 260px;
+		height: 2px;
+		background-color: #000;
+	}
+
+	.references {
+		position: absolute;
+		right: 100px;
+		bottom: 55px;
+		width: 240px;
+
+		p {
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 1;
+		}
+
+		ul {
+			margin-top: 10px;
+
+			li {
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 1.4;
+				padding: 5px 0;
+				border-top: 2px solid #000;
+			}
+		}
+	}
+
+	.logo {
+		position: absolute;
+		top: 16vh;
+		right: 50px;
+	}
 }

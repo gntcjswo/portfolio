@@ -1689,6 +1689,135 @@ ul.flex_box--fc.ea-10 > li {
   color: transparent;
 }
 
-:root {
-  --element-color: #000;
+.intro_section {
+  position: relative;
+}
+.intro_section .intro_section__inner {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.intro_section .tit {
+  position: absolute;
+  top: 16vh;
+  left: 10vw;
+}
+.intro_section .tit h1 {
+  display: flex;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+}
+.intro_section .tit h1 .letter_box {
+  display: block;
+}
+.intro_section .tit h1 .letter_box .letter {
+  display: block;
+  transform-style: preserve-3d;
+}
+.intro_section .tit h1 .letter_box.letter_box--d {
+  perspective: 600px;
+}
+.intro_section .tit h1 .letter_box.letter_box--d .letter {
+  transform-origin: center center 30px;
+}
+.intro_section .tit h1 .letter_box.letter_box--e {
+  perspective: 800px;
+}
+.intro_section .tit h1 .letter_box.letter_box--e .letter {
+  transform-origin: center center 50px;
+}
+.intro_section .tit h1 .letter_box.letter_box--s {
+  perspective: 1200px;
+}
+.intro_section .tit h1 .letter_box.letter_box--s .letter {
+  transform-origin: center center 300px;
+}
+.intro_section .tit h1 .letter_box.letter_box--i {
+  perspective: 400px;
+}
+.intro_section .tit h1 .letter_box.letter_box--i .letter {
+  transform-origin: center center 100px;
+}
+.intro_section .tit h1 .letter_box.letter_box--g {
+  perspective: 700px;
+}
+.intro_section .tit h1 .letter_box.letter_box--g .letter {
+  transform-origin: center center 200px;
+}
+.intro_section .tit h1 .letter_box.letter_box--n {
+  perspective: 600px;
+  margin-right: 10px;
+}
+.intro_section .tit h1 .letter_box.letter_box--n .letter {
+  transform-origin: center center 70px;
+}
+.intro_section .tit h1 .letter_box.letter_box--m {
+  perspective: 300px;
+}
+.intro_section .tit h1 .letter_box.letter_box--m .letter {
+  transform-origin: center center 40px;
+}
+.intro_section .tit .line {
+  width: calc(90vw - 50px);
+  height: 1px;
+  background-color: #000;
+  margin-top: 20px;
+}
+.intro_section .txt_01 {
+  margin-top: 20px;
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #773ee1;
+}
+.intro_section .txt_02 {
+  margin-top: 10px;
+  font-size: 3vw;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ab3ee1;
+}
+.intro_section .line_01 {
+  position: absolute;
+  top: calc(16vh + 81px);
+  right: 50px;
+  width: 30px;
+  height: calc(84vh - 81px);
+  background-color: #773ee1;
+}
+.intro_section .line_02 {
+  position: absolute;
+  right: 80px;
+  bottom: 50px;
+  width: 260px;
+  height: 2px;
+  background-color: #000;
+}
+.intro_section .references {
+  position: absolute;
+  right: 100px;
+  bottom: 55px;
+  width: 240px;
+}
+.intro_section .references p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+}
+.intro_section .references ul {
+  margin-top: 10px;
+}
+.intro_section .references ul li {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 5px 0;
+  border-top: 2px solid #000;
+}
+.intro_section .logo {
+  position: absolute;
+  top: 16vh;
+  right: 50px;
 }/*# sourceMappingURL=portfolio.css.map */
