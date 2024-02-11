@@ -44,10 +44,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="/assets/js/lib/teletype/jquery.teletype.min.js"></script>
+    <script src="/assets/js/lib/lenis/lenis.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="/assets/css/fonts/fonts.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/portfolio.min.css" />
+
+	<!-- ie css 변수적용 -->
+	<script>
+		window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');
+	</script>
 </head>
 
 <body>
@@ -87,11 +92,28 @@
 
         <div class="port_section section_01">
 			<div class="section01_inner">
-
+				<div class="portfolio_item">
+					<figure>
+						<img src="http://tscnsshop.uni-net.co.kr/user/banner/11" alt="" />
+						<a href="#" target="_blank">새창으로 열기</a>
+						<figcaption class="rd_only">KLB Logistics</figcaption>
+					</figure>
+				</div>
+				<div class="portfolio_item">
+					<figure>
+						<img src="http://tscnsshop.uni-net.co.kr/user/banner/11" alt="" />
+						<a href="#" target="_blank">새창으로 열기</a>
+						<figcaption class="rd_only">태성 CNS</figcaption>
+					</figure>
+				</div>
 			</div>
 		</div>
 
-		<div class="fit_info_box"></div>
+		<div class="fit_info_box">
+			<p class="fs_16 fw_500 lh_1">What I made</p>
+			<div class="fit_info_box__line"></div>
+			<h3 class="project_name"></h3>
+		</div>
 	</div>
 	
 	<script type="text/javascript" src="/assets/js/portfolio.js"></script>

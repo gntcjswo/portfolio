@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+:root {
+    --element-color: #000;
+}
+
+body {
+	color: var(--element-color);
+}
+
 .intro_section {
 	position: relative;
 
@@ -16,7 +24,7 @@
 		
 		h1 {
 			display: flex;
-			font-size: 60px;
+			font-size: 3.75rem;
 			font-weight: 700;
 			line-height: 1;
 
@@ -92,7 +100,7 @@
 		margin-top: 20px;
 		font-size: 5vw;
 		font-weight: 700;
-		line-height: 1.4;
+		line-height: 1.3;
 		letter-spacing: -0.02em;
 		color: #773ee1;
 	}
@@ -101,7 +109,7 @@
 		margin-top: 10px;
 		font-size: 3vw;
 		font-weight: 700;
-		line-height: 1.4;
+		line-height: 1.3;
 		color: #ab3ee1;
 	}
 
@@ -152,5 +160,103 @@
 		position: absolute;
 		top: 16vh;
 		right: 50px;
+	}
+}
+
+.port_section {
+	padding: 100vh 0 8.125rem;
+}
+
+.section01_inner {
+	width: 60vw;
+	padding: 0 20px;
+	margin-left: auto;
+
+	.portfolio_item {
+		max-width: 720px;
+		// margin-top: 6.25rem;
+		margin-top: 30vh;
+		margin-left: auto;
+
+		// &~ .portfolio_item {
+		// 	margin-top: 30vh;
+		// }
+
+		&:nth-child(even) {
+			margin-left: 0;
+		}
+
+		figure {
+			position: relative;
+			font-size: 0;
+			height: 28.125rem;
+			box-shadow: 0.4375rem 0.5625rem 1.875rem rgba(0,0,0,.7);
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: top center;
+
+				@include transition(1s transform ease-out);
+			}
+
+			a {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				font-size: 0;
+				text-indent: -9999px;
+				color: transparent;
+				overflow: hidden;
+				border: 10px solid transparent;
+				border-image: linear-gradient(to bottom, #ab3ee1 0%, #773ee1 100%);
+				border-image-slice: 1;
+				opacity: 0;
+
+				@include transition(.5s opacity ease-out);
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.fit_info_box {
+	position: fixed;
+	top: 40vh;
+	left: 3vw;
+	width: calc(40vw - 3vw);
+	padding-right: 50px;
+
+	.fit_info_box__line {
+		width: calc(100vw - 3vw);
+		height: 1px;
+		background: linear-gradient(90deg, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+		margin: 0.9375rem 0 1.25rem;
+	}
+
+	.project_name {
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+}
+
+@include sm-max {
+	.fit_info_box {
+		top: 13vh;
+		width: calc(100vw - 6vw);
+		padding-right: 0;
+	}
+
+	.section01_inner {
+		width: 100vw;
 	}
 }
