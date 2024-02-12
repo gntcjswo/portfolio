@@ -1932,4 +1932,11 @@ body {
   .section01_inner {
     width: 100vw;
   }
+  .section01_inner .portfolio_item figure {
+    max-width: none;
+    width: 100%;
+  }
+  .section01_inner .portfolio_item ul {
+    position: relative;
+  }
 }/*# sourceMappingURL=portfolio.css.map */

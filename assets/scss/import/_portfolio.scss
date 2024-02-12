@@ -277,5 +277,16 @@ body {
 
 	.section01_inner {
 		width: 100vw;
+
+		.portfolio_item {
+			figure {
+				max-width: none;
+    			width: 100%;
+			}
+
+			ul {
+				position: relative;
+			}
+		}
 	}
 }
