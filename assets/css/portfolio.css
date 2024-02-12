@@ -1922,6 +1922,7 @@ body {
   text-transform: uppercase;
 }
 
+/* responsive */
 @media (max-width: 575px) {
   .fit_info_box {
     top: auto;

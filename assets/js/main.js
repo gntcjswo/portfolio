@@ -1,7 +1,9 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 let scrollFlag = false;
-const introMotion = gsap.timeline();
+const introMotion = gsap.timeline({
+	paused: true,
+});
 const section00Motion = gsap.timeline({
 	onStart: ()=>{scrollFlag=true},
 	paused: true,
@@ -44,7 +46,7 @@ let showcaseSlider;
 let showcaseSliderProgress;
 
 $(function(){
-	
+
 	// intro
 	introMotion.to('.intro_path', 0.8, {
 		attr: { d: 'M 0 100 V 50 Q 50 0 100 50 V 100 z' },
@@ -90,6 +92,15 @@ $(function(){
 			section00Motion.play();
 		}
 	});
+
+	var filter = "win16|win32|win64|mac|macintel";
+	if ( navigator.platform ) {
+		if ( filter.indexOf( navigator.platform.toLowerCase() ) >= 0 ) {
+			introMotion.play();
+		} else {
+			dataAlertDesign('모바일 디바이스 주의 *', '현재 웹 페이지는 PC환경의 마우스 휠에 최적화되어 있습니다.');
+		}
+	}
 
 	// showcase slider
 	showcaseSlider = new Swiper('.showcase-container', {
@@ -653,3 +664,26 @@ $(function(){
 		}
 	});
 });
+
+// 알림창
+function dataAlertDesign(alertTitle, alertMsg) {
+	$('#wrapper').append($('<div class="alert_design_form on">\
+								<div class="alert_design_form__inner">\
+									<div class="alert_design_form__inner__cont">\
+										<div>\
+											<h2>' + alertTitle + '</h2>\
+											<p>' + alertMsg +'</p>\
+										</div>\
+									</div>\
+									<div class="alert_design_form__inner__btn">\
+										<a href="javascript:clearAlert();">Close</a>\
+									</div>\
+								</div>\
+							</div>').hide().fadeIn(500, function(){}));
+							// $('.alert_design_form').addClass('on');
+}
+// 알림창 닫기
+function clearAlert() {
+	$('.alert_design_form').removeClass('on');
+	$('.alert_design_form').fadeOut(500, function(){$(this).remove(); introMotion.play();});
+}
