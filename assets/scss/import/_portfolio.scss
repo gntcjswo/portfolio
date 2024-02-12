@@ -174,7 +174,10 @@ body {
 
 	.portfolio_item {
 		position: relative;
+		width: 720px;
+		max-width: calc(100% - 165px);
 		margin-top: 30vh;
+		margin-left: auto;
 		
 		// &~ .portfolio_item {
 		// 	margin-top: 30vh;
@@ -183,10 +186,10 @@ body {
 		figure {
 			position: relative;
 			font-size: 0;
-			width: 720px;
-			max-width: calc(100% - 165px);
+			// width: 720px;
+			// max-width: calc(100% - 165px);
 			height: 28.125rem;
-			margin-left: auto;
+			// margin-left: auto;
 			box-shadow: 0.4375rem 0.5625rem 1.875rem rgba(0,0,0,.7);
 			overflow: hidden;
 
@@ -225,21 +228,28 @@ body {
 		ul {
 			position: absolute;
 			top: 0;
-			left: 0;
+			right: 100%;
+			margin-right: 10px;
+			white-space: nowrap;
 			font-size: 16px;
 			font-weight: 300;
 			line-height: 1.6;
+			text-align: right;
 			color: #773ee1;
 		}
 
 		&:nth-child(even) {
+			margin-left: 0;
+
 			figure {
-				margin-left: 0;
+				// margin-left: 0;
 			}
 
 			ul {
-				right: 0;
-				left: auto;
+				right: auto;
+				left: 100%;
+				margin-left: 10px;
+				text-align: left;
 			}
 		}
 	}
@@ -277,16 +287,27 @@ body {
 	}
 
 	.section01_inner {
-		width: 100vw;
+		width: 100%;
 
 		.portfolio_item {
-			figure {
-				max-width: none;
-    			width: 100%;
-			}
+			max-width: none;
+    		width: 100%;
 
 			ul {
 				position: relative;
+				right: auto;
+				left: auto;
+				margin-right: 0;
+				margin-left: 0;
+			}
+
+			&:nth-child(even) {
+				ul {
+					right: auto;
+					left: auto;
+					margin-right: 0;
+					margin-left: 0;
+				}
 			}
 		}
 	}
