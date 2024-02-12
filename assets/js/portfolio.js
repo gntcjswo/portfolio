@@ -89,6 +89,29 @@ portfolioItem.forEach((item,i)=>{
 		}
 	});
 
+	let itemComment = $(item).find('ul');
+	const portfolioItemCommentAni = gsap.from(itemComment, {
+		yPercent: 100,
+		scrollTrigger: {
+			trigger: item,
+			start: 'top bottom',
+			end: 'top 20%',
+			scrub: true
+		}
+	});
+	const portfolioItemCommentAni2 = gsap.fromTo(itemComment, {
+		yPercent: 0,
+	}, {
+		yPercent: 100,
+		skewY: -8,
+		scrollTrigger: {
+			trigger: item,
+			start: 'top 20%',
+			end: 'top top-=60%',
+			scrub: true
+		}
+	});
+
 	const portfolioItemText = gsap.timeline({
 		scrollTrigger: {
 			trigger: item,
@@ -101,7 +124,7 @@ portfolioItem.forEach((item,i)=>{
 	});
 	portfolioItemText.to('.project_name', 1, {
 		text: $(item).find('figcaption').text(),
-	})
+	});
 });
 
 const portfolioImg = gsap.utils.toArray('.portfolio_item > figure');

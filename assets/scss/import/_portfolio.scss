@@ -173,23 +173,20 @@ body {
 	margin-left: auto;
 
 	.portfolio_item {
-		max-width: 720px;
-		// margin-top: 6.25rem;
+		position: relative;
 		margin-top: 30vh;
-		margin-left: auto;
-
+		
 		// &~ .portfolio_item {
 		// 	margin-top: 30vh;
 		// }
 
-		&:nth-child(even) {
-			margin-left: 0;
-		}
-
 		figure {
 			position: relative;
 			font-size: 0;
+			width: 720px;
+			max-width: calc(100% - 165px);
 			height: 28.125rem;
+			margin-left: auto;
 			box-shadow: 0.4375rem 0.5625rem 1.875rem rgba(0,0,0,.7);
 			overflow: hidden;
 
@@ -224,6 +221,27 @@ body {
 				}
 			}
 		}
+
+		ul {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 1.6;
+			color: #773ee1;
+		}
+
+		&:nth-child(even) {
+			figure {
+				margin-left: 0;
+			}
+
+			ul {
+				right: 0;
+				left: auto;
+			}
+		}
 	}
 }
 
@@ -251,7 +269,8 @@ body {
 
 @include sm-max {
 	.fit_info_box {
-		top: 13vh;
+		top: auto;
+		bottom: 39.25rem;
 		width: calc(100vw - 6vw);
 		padding-right: 0;
 	}

@@ -203,8 +203,8 @@ section00Motion.to('.fix_section', 0, {
 	ease: 'power3.out',
 	// onComplete: ()=>{scrollFlag=false}
 }, '-=.5')
-.from('.fix_section__portfolio', 1, {
-	right: '-200px',
+.to('.fix_section__portfolio', 1, {
+	right: '20px',
 	ease: 'power2.inOut'
 }, '-=1');
 

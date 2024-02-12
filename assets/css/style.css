@@ -1773,7 +1773,7 @@ ul.flex_box--fc.ea-10 > li {
   justify-content: center;
   align-items: center;
   top: 20px;
-  right: 20px;
+  right: -200px;
   width: 185px;
   max-width: 100%;
   background-color: transparent;
