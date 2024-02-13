@@ -15,7 +15,10 @@ gsap.ticker.add((time)=>{
 gsap.ticker.lagSmoothing(0)
 
 const introMotion = gsap.timeline();
-introMotion.from('.tit > .line', .5, {
+introMotion.to('.intro_section', 0, {
+	autoAlpha: 1
+})
+.from('.tit > .line', .5, {
 	width: 0,
 	ease: 'power2.out'
 }, 1)

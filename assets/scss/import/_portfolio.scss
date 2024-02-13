@@ -10,6 +10,8 @@ body {
 
 .intro_section {
 	position: relative;
+	opacity: 0;
+	visibility: hidden;
 
 	.intro_section__inner {
 		position: relative;
