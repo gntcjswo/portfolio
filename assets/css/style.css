@@ -1776,7 +1776,7 @@ ul.flex_box--fc.ea-10 > li {
   position: relative;
   width: 1.25rem;
   height: 2rem;
-  margin: 0 auto 0.625rem;
+  margin: 0 auto;
   border-radius: 0.625rem;
   border: 0.125rem solid #000;
 }
@@ -2304,6 +2304,14 @@ ul.flex_box--fc.ea-10 > li {
   .fix_section .fix_section__tit .fix_section__p {
     font-size: 16px;
     transform: translateY(1.7em) !important;
+  }
+  .scroll_box {
+    bottom: 30px;
+    right: 30px;
+    left: auto;
+    -webkit-transform: translateX(none);
+    -ms-transform: translateX(none);
+    transform: translateX(none);
   }
   .feature_box {
     padding-bottom: 8vh;
