@@ -1703,8 +1703,6 @@ ul.flex_box--fc.ea-10 > li {
 }
 .fix_section .fix_section__tit {
   position: fixed;
-  top: calc(50vh - 70px);
-  left: calc(50vw - 160px);
   width: 320px;
   max-width: 100%;
   z-index: 1;
@@ -1751,20 +1749,17 @@ ul.flex_box--fc.ea-10 > li {
 .fix_section .fix_section__line .fix_section__line__line01 {
   width: 0;
   height: 2px;
-  top: calc(50vh + 8px);
-  left: 50vw;
+  transform: translate(0, 8px);
 }
 .fix_section .fix_section__line .fix_section__line__line02 {
   width: 80px;
   height: 1px;
-  top: calc(50vh + 8px);
-  left: calc(50vw - 160px);
+  transform: translate(-160px, 8px);
 }
 .fix_section .fix_section__line .fix_section__line__line03 {
   width: 100px;
   height: 1px;
-  top: calc(50vh + 8px);
-  left: calc(50vw + 60px);
+  transform: translate(60px, 8px);
 }
 
 .fix_section__portfolio {
@@ -1930,6 +1925,7 @@ ul.flex_box--fc.ea-10 > li {
   z-index: 11;
 }
 .fix_section__nav button {
+  position: relative;
   display: block;
   width: 20px;
   height: 20px;
@@ -1941,6 +1937,21 @@ ul.flex_box--fc.ea-10 > li {
   background-color: #ccc;
   pointer-events: auto;
   transition: 1s background cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.fix_section__nav button:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+  background-color: #666;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.4s transform ease-in-out;
+}
+.fix_section__nav button:not(.active):hover:after {
+  transform: scale(1);
 }
 .fix_section__nav button + button {
   margin-left: 10px;

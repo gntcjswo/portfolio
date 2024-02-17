@@ -175,20 +175,36 @@ $(function(){
 section00Motion.to('.fix_section', 0, {
 	autoAlpha: 1
 })
+.to('.fix_section__tit', 1, {
+	top: '50vh',
+	left: '50vw',
+	x: '-160px',
+	y: '-70px',
+	ease: 'power2.inOut'
+}, '-=1')
 .to('.fix_section__line__line01', 1, {
 	autoAlpha: '1',
-	left: 'calc(50vw - 160px)',
+	top: '50vh',
+	left: '50vw',
+	x: '-160px',
+	y: '8px',
 	width: '320px',
 	ease: 'power2.inOut'
 }, '-=.4')
 .to('.fix_section__line__line02', .8, {
-	top: 'calc(50vh - 90px)',
+	top: '50vh',
+	left: '50vw',
+	x: '-160px',
+	y: '-90px',
 	autoAlpha: '1',
 	ease: 'power2.inOut'
 })
 .to('.fix_section__line__line03', .8, {
 	autoAlpha: '1',
-	top: 'calc(50vh + 80px)',
+	top: '50vh',
+	left: '50vw',
+	x: '60px',
+	y: '80px',
 	ease: 'power2.inOut'
 }, '-=.8')
 .to('.fix_section__h1', .8, {
@@ -230,28 +246,36 @@ section01Motion.to('#section01', .2, {
 	},
 })
 .to('.fix_section__line__line01', 1, {
-	top: '50vh',
-	left: '30px',
+	// top: '50vh',
+	left: '-=50vw',
+	x: '30px',
+	y: '0',
 	width: '80vw',
 	ease: 'power2.inOut'
 }, '-=.2')
 .to('.fix_section__line__line02', 1, {
-	top: '25vh',
-	left: '20vw',
+	// top: '50vh',
+	// left: '50vw',
+	x: '-30vw',
+	y: '-25vh',
 	width: '50vw',
 	height: '5px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__line__line03', 1, {
-	top: '75vh',
-	left: '30vw',
+	// top: '50vh',
+	// left: '50vw',
+	x: '-20vw',
+	y: '25vh',
 	width: '40vw',
 	height: '5px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__tit', 1, {
-	top: 'calc(50vh - 80px)',
-	left: '30px',
+	top: '50vh',
+	left: '0vw',
+	x: '30px',
+	y: '-80px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__line > div', 1, {
@@ -297,28 +321,36 @@ section02Motion.to('#section01', .5, {
 	zIndex: 10
 })
 .to('.fix_section__line__line01', 1, {
-	top: '60vh',
-	left: '0',
+	// top: '50vh',
+	left: '+=0',
+	x: '0',
+	y: '10vh',
 	width: '100vw',
 	ease: 'power2.inOut'
 })  
 .to('.fix_section__line__line02', 1, {
-	top: '40vh',
-	left: '0',
+	// top: '50vh',
+	// left: '0',
+	x: '-50vw',
+	y: '-10vh',
 	width: '100vw',
 	height: '2px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__line__line03', 1, {
-	top: '80vh',
-	left: '0',
+	// top: '50vh',
+	// left: '0',
+	x: '-50vw',
+	y: '30vh',
 	width: '100vw',
 	height: '2px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__tit', 1, {
-	top: 'calc(40vh - 80px)',
-	left: '30px',
+	top: '-=10vh',
+	// left: '0vw',
+	x: '30px',
+	y: '-80px',
 	color: '#000',
 	ease: 'power2.inOut'
 }, '-=1')
@@ -362,11 +394,13 @@ section03Motion.to('#section02', .5, {
 	zIndex: 10
 })
 .to('.fix_section__line__line01', 1, {
-	top: '70vh',
+	// top: '70vh',
+	y: '20vh',
 	ease: 'power2.inOut'
 })  
 .to('.fix_section__line__line02', 1, {
-	top: '60vh',
+	// top: '60vh',
+	y: '10vh',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__line__line03', 1, {
@@ -375,6 +409,7 @@ section03Motion.to('#section02', .5, {
 }, '-=1')
 .to('.fix_section__tit', 1, {
 	top: '2vh',
+	y: '0px',
 	width: '410px',
 	ease: 'power2.inOut'
 }, '-=1')
@@ -421,26 +456,30 @@ section04Motion.to('#section03', .5, {
 	zIndex: 10
 })
 .to('.fix_section__line__line01', 1, {
-	top: '20vh',
+	// top: '20vh',
 	left: '-50vw',
+	y: '-30vh',
 	width: '200vw',
 	ease: 'power2.inOut'
 })  
 .to('.fix_section__line__line02', 1, {
-	top: '80vh',
+	// top: '80vh',
 	left: '-50vw',
+	y: '30vh',
 	width: '200vw',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__line__line03', 1, {
-	top: 'calc(100vh - 2px)',
+	top: '+=50vh',
 	left: '-50vw',
+	y: '-2px',
 	width: '200vw',
 	height: '2px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__tit', 1, {
 	left: '-410px',
+	x: '-10px',
 	ease: 'power2.inOut'
 }, '-=1')
 .to('.fix_section__line > div', 1, {
