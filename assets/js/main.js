@@ -233,6 +233,9 @@ section00Motion.to('.fix_section', 0, {
 .to('.fix_section__portfolio', 1, {
 	right: '20px',
 	ease: 'power2.inOut'
+}, '-=1')
+.to('.scroll_box', 1, {
+	autoAlpha: 1
 }, '-=1');
 
 section01Motion.to('#section01', .2, {
@@ -297,6 +300,9 @@ section01Motion.to('#section01', .2, {
 .to('.fix_section__p > span', 1, {
 	text: 'By Woosung',
 	ease: 'power2.inOut'
+}, '-=1')
+.to('.scroll_box', 1, {
+	autoAlpha: 0
 }, '-=1')
 .from('.feature_box > .inbox', 1, {
 	x: 50,
