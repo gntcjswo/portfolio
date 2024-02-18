@@ -8,10 +8,15 @@ body {
 	color: var(--element-color);
 }
 
-.intro_section {
-	position: relative;
+#wrapper {
 	opacity: 0;
 	visibility: hidden;
+}
+
+.intro_section {
+	position: relative;
+	// opacity: 0;
+	// visibility: hidden;
 
 	.intro_section__inner {
 		position: relative;
