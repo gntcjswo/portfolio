@@ -2109,7 +2109,7 @@ ul.flex_box--fc.ea-10 > li {
   background: linear-gradient(to bottom, #f5e8ff 10%, #fff1f7 60%, #fff);
 }
 .fix_section__bg div:nth-child(2) {
-  background: linear-gradient(to top, #beccff 10%, #f1f9ff 60%, #fff);
+  background: linear-gradient(-25deg, #beccff 10%, #f1f9ff 60%, #fff);
 }
 .fix_section__bg div:nth-child(3) {
   background-color: #fff;
