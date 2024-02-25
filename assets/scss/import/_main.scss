@@ -102,6 +102,15 @@
         border-radius: 0.625rem;
         border: 0.125rem solid #000;
 
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+        -webkit-animation-name: scrollbox;
+        animation-name: scrollbox;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+
         span {
             position: absolute;
             top: 0.3125rem;
@@ -113,10 +122,10 @@
             height: 0.25rem;
             background-color: #000;
             border-radius: 0.125rem;
-            -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-            -webkit-animation-name: scrollbox;
-            animation-name: scrollbox;
+            -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+            -webkit-animation-name: scrollSwitch;
+            animation-name: scrollSwitch;
             -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
             -webkit-animation-timing-function: linear;
@@ -127,33 +136,47 @@
 
 @-webkit-keyframes scrollbox {
 	0% {
-		top: 0.3125rem;
-		height: 0.25rem;
+		top: 0;
 	}
 
-	50% {
-		top: 0.3125rem;
-		height: 1.125rem;
+	60% {
+		top: 0.4375rem;
 	}
 	
 	75% {
-		top: 1.1875rem;
-		height: 0.25rem;
+		top: -0.3125rem;
 	}
 
 	100% {
-		top: 1.1875rem;
-		height: 0.25rem;
+		top: 0;
 	}
 }
 
 @keyframes scrollbox {
 	0% {
+		top: 0;
+	}
+
+	60% {
+		top: 0.4375rem;
+	}
+	
+	75% {
+		top: -0.3125rem;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+@-webkit-keyframes scrollSwitch {
+	0% {
 		top: 0.3125rem;
 		height: 0.25rem;
 	}
 
-	50% {
+	60% {
 		top: 0.3125rem;
 		height: 1.125rem;
 	}
@@ -164,7 +187,29 @@
 	}
 
 	100% {
+		top: 0.3125rem;
+		height: 0.25rem;
+	}
+}
+
+@keyframes scrollSwitch {
+	0% {
+		top: 0.3125rem;
+		height: 0.25rem;
+	}
+
+	60% {
+		top: 0.3125rem;
+		height: 1.125rem;
+	}
+	
+	75% {
 		top: 1.1875rem;
+		height: 0.25rem;
+	}
+
+	100% {
+		top: 0.3125rem;
 		height: 0.25rem;
 	}
 }
@@ -429,10 +474,12 @@
         transition: clip-path 0s 1s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0s 1s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-clip-path 0s 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
         &:nth-child(1) {
-            background-color: #fff1f7;
+            // background-color: #fff1f7;
+            background: linear-gradient(to bottom, #f5e8ff 10%, #fff1f7 60%, #fff);
         }
         &:nth-child(2) {
-            background-color: #f1f9ff;
+            // background-color: #f1f9ff;
+            background: linear-gradient(to bottom, #beccff 10%, #f1f9ff 60%, #fff);
         }
         &:nth-child(3) {
             background-color: #fff;
