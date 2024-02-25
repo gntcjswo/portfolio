@@ -35,6 +35,10 @@ const section04Motion = gsap.timeline({
 	onReverseComplete: ()=>{scrollFlag=false}
 });
 
+// const geometryMotion = gsap.timeline({
+// 	paused: true
+// });
+
 const loadingMotion = gsap.timeline({
 	onStart: ()=>{scrollFlag=true},
 	paused: true,
@@ -153,6 +157,19 @@ $(function(){
 
 	showcaseSlider.on('progress', function (swiper, progress) {
 		showcaseSliderProgress = progress;
+		console.log(progress);
+		$('.geometry span.pos1').css('transform', 'translateX(' + 300*progress + '%) scale(0.3) rotate(' + 640*progress + 'deg)');
+		$('.geometry span.pos2').css('transform', 'translateX(' + -300*progress + '%) scale(0.5) rotate(' + 640*progress + 'deg)');
+		$('.geometry span.pos3').css('transform', 'translateX(' + -300*progress + '%) scale(0.6) rotate(' + -640*progress + 'deg)');
+		$('.geometry span.pos4').css('transform', 'translateX(' + -300*progress + '%) scale(1) rotate(' + 640*progress + 'deg)');
+		$('.geometry span.pos5').css('transform', 'translateX(' + -400*progress + '%) scale(0.7) rotate(' + 640*progress + 'deg)');
+		$('.geometry span.pos6').css('transform', 'translateX(' + 50*progress + '%) scale(0.7) rotate(' + 640*progress + 'deg)');
+		$('.geometry span.pos7').css('transform', 'translateX(' + 250*progress + '%) scale(2) rotate(' + 640*progress + 'deg)');
+		$('.geometry span.pos8').css('transform', 'translateX(' + -50*progress + '%) scale(1) rotate(' + -540*progress + 'deg)');
+		$('.geometry span.pos9').css('transform', 'translateX(' + -50*progress + '%) scale(0.8) rotate(' + 620*progress + 'deg)');
+		$('.geometry span.pos10').css('transform', 'translateX(' + 130*progress + '%) scale(0.3) rotate(' + -620*progress + 'deg)');
+		// geometryMotion.seek(progress);
+		// geometryMotion.progress(progress);
 		if (progress != 0 && progress != 1 && !scrollFlag) {
 			scrollFlag = true;
 		}
@@ -445,7 +462,53 @@ section03Motion.to('#section02', .5, {
 	autoAlpha: 0,
 	ease: 'power3.out',
 	// onComplete: ()=>{$('.showcase-container').update()}
-});
+})
+.to('.geometry', 1, {
+	autoAlpha: 1,
+	ease: 'power3.out',
+}, '-=1');
+
+// geometryMotion.to('.geometry span.pos1', 1, {
+// 	rotate: 640,
+// 	xPercent: 300
+// }, 'geometry')
+// .to('.geometry span.pos2', 1, {
+// 	rotate: 640,
+// 	xPercent: -300
+// }, 'geometry')
+// .to('.geometry span.pos3', 1, {
+// 	rotate: -640,
+// 	xPercent: -300
+// }, 'geometry')
+// .to('.geometry span.pos4', 1, {
+// 	rotate: 640,
+// 	xPercent: -300,
+	
+// }, 'geometry')
+// .to('.geometry span.pos5', 1, {
+// 	rotate: 640,
+// 	xPercent: -400
+// }, 'geometry')
+// .to('.geometry span.pos6', 1, {
+// 	rotate: 640,
+// 	xPercent: 50
+// }, 'geometry')
+// .to('.geometry span.pos7', 1, {
+// 	rotate: 640,
+// 	xPercent: 250,
+// }, 'geometry')
+// .to('.geometry span.pos8', 1, {
+// 	rotate: -540,
+// 	xPercent: -50,
+// }, 'geometry')
+// .to('.geometry span.pos9', 1, {
+// 	rotate: 620,
+// 	xPercent: -50,
+// }, 'geometry')
+//  .to('.geometry span.pos10', 1, {
+// 	rotate: -620,
+// 	xPercent: 130,
+// }, 'geometry')
 
 section04Motion.to('#section03', .5, {
 	display: 'none',

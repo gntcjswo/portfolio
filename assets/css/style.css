@@ -2295,6 +2295,93 @@ ul.flex_box--fc.ea-10 > li {
   transform: translateX(70%);
 }
 
+.geometry {
+  opacity: 0;
+}
+.geometry span {
+  position: fixed;
+  display: block;
+  width: 100px;
+  height: 100px;
+  z-index: -10;
+  -moz-transition: 1s all ease-out;
+  -o-transition: 1s all ease-out;
+  -webkit-transition: 1s all ease-out;
+  transition: 1s all ease-out;
+}
+.geometry svg {
+  width: 100%;
+  height: 100%;
+}
+.geometry svg * {
+  stroke: #e51550;
+}
+.geometry .shape {
+  width: 100%;
+  height: 100%;
+}
+.geometry .pos1 {
+  right: 25vw;
+  top: 5vh;
+  transform: scale(0.3) rotate(10deg);
+}
+.geometry .pos2 {
+  right: 10vw;
+  top: 10vh;
+  opacity: 0.8;
+  transform: scale(0.5) rotate(-60deg);
+}
+.geometry .pos3 {
+  right: 10vw;
+  top: 22vh;
+  width: 200px;
+  height: 200px;
+  transform: scale(0.6) rotate(20deg);
+  opacity: 0.7;
+}
+.geometry .pos4 {
+  right: 8vw;
+  bottom: 5vh;
+  transform: scale(1);
+  opacity: 0.3;
+}
+.geometry .pos5 {
+  right: 20vw;
+  bottom: 35vh;
+  transform: scale(0.7) rotate(30deg);
+  opacity: 0.8;
+}
+.geometry .pos6 {
+  right: 20vw;
+  top: 15vh;
+  transform: scale(0.7);
+  opacity: 0.2;
+}
+.geometry .pos7 {
+  left: 0vw;
+  bottom: 8vh;
+  transform: scale(2) rotate(15deg);
+  opacity: 0.8;
+}
+.geometry .pos8 {
+  left: 5vw;
+  bottom: 5vh;
+  transform: scale(1) rotate(5deg);
+  opacity: 0.5;
+}
+.geometry .pos9 {
+  left: 9vw;
+  top: calc(50vh - 300px);
+  transform: scale(0.8) rotate(5deg);
+  opacity: 0.5;
+}
+.geometry .pos10 {
+  left: 7vw;
+  top: calc(50vh - 340px);
+  transform: scale(0.3) rotate(25deg);
+  opacity: 1;
+}
+
 /* responsive */
 @media (max-width: 767px) {
   .fix_section .fix_section__tit .fix_section__h1 {
