@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "[http://base-css.woobi.co.kr/](http://base-css.woobi.co.kr/)",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass assets/scss/style.scss assets/css/style.min.css --style=compressed && sass assets/scss/portfolio.scss assets/css/portfolio.min.css --style=compressed",
+    "sass:watch": "sass --watch assets/scss/style.scss:assets/css/style.min.css assets/scss/portfolio.scss:assets/css/portfolio.min.css --style=compressed",
+    "build": "npm run sass && gulp build",
+    "clean": "gulp clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^6.1.1",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-javascript-obfuscator": "^1.1.6",
+    "gulp-replace": "^1.1.4",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.98.0"
+  }
+}

@@ -1,0 +1,57 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/skill/assets/lib/pinchzoom/pinchzoom.js"></script>
+	<style>
+		.prd_detail,
+		.prd_detail img{
+			width: 100%;
+			-webkit-user-drag: none;
+		}
+		.prd_detail figure {
+			font-size: 0;
+		}
+	</style>
+
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<div class="prd_detail" style="margin-bottom: 50px;">
+			<h2 style="font-size: 20px;
+					   font-weight: bold;
+					   padding: 10px 0;
+					   border-bottom: 1px solid #dddddd;
+					   margin-bottom: 30px;">줌 없는 영역</h2>
+			<div>
+				<figure><img src="/skill/assets/img/sk05-pinchzoom/img_pinchzoom_sample_02.jpg" alt="" /></figure>
+			</div>
+		</div>
+
+		<div class="prd_detail" id="prdDetail">
+			<h2 style="font-size: 20px;
+					   font-weight: bold;
+					   padding: 10px 0;
+					   border-bottom: 1px solid #dddddd;
+					   margin-bottom: 30px;">손가락 줌 되는 영역</h2>
+			<div>
+				<figure><img src="/skill/assets/img/sk05-pinchzoom/img_pinchzoom_sample_01.jpg" alt="" /></figure>
+				<figure><img src="/skill/assets/img/sk05-pinchzoom/img_pinchzoom_sample_02.jpg" alt="" /></figure>
+				<figure><img src="/skill/assets/img/sk05-pinchzoom/img_pinchzoom_sample_03.jpg" alt="" /></figure>
+			</div>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$('#prdDetail').each(function () {
+			new RTP.PinchZoom($(this), {});
+		});
+	</script>
+</body>
+</html>

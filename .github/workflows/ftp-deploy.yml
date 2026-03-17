@@ -1,0 +1,59 @@
+name: FTP Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Node.js 설정
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # 의존성 설치
+      - name: Install dependencies
+        run: npm ci
+
+      # 빌드 실행
+      - name: Build project
+        run: npm run build
+
+      # 이전 배포 기록 다운로드
+      - name: Download deploy history
+        uses: actions/download-artifact@v4
+        with:
+          name: ftp-deploy-sync
+        continue-on-error: true # 처음 실행 시 기록 없을 때 무시
+
+      # main 브랜치 배포
+      - name: FTP Deploy to Production (main branch)
+        if: github.ref == 'refs/heads/main'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./deploy/
+          server-dir: ${{ secrets.FTP_TARGET_DIR }}
+          dangerous-clean-slate: false # 변경 파일만
+          state-name: .ftp-deploy-sync.json
+
+      # 배포 기록 저장
+      - name: Upload deploy history
+        uses: actions/upload-artifact@v4
+        with:
+          name: ftp-deploy-sync
+          path: .ftp-deploy-sync.json
+
+      # 디버깅용 파일 확인
+      # - name: List all files recursively
+      #   run: find . -type f

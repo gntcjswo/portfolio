@@ -1,0 +1,210 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+	
+	<style>
+		.relsite_outwarp {
+			position: absolute;
+			top: 21px;
+			right: 20px;
+			z-index: 10;
+		}
+		.relatedsites_wrap {
+			position: relative;
+			width: 240px;
+		}
+		.relatedsites_wrap > a:not(.relatedsite_btn) {
+			display: block;
+			font-size: 14px;
+			font-weight: 400;
+			color: #000;
+			padding: 12px 19px;
+			line-height: 1;
+			border: 1px solid #454646;
+			background: url(/skill/assets/img/sk04-dropdown02/icon_arrow_down_black.png) no-repeat right 60px center;
+			-webkit-transition: .2s all ease-out;
+			-moz-transition: .2s all ease-out;
+			-ms-transition: .2s all ease-out;
+			-o-transition: .2s all ease-out;
+			transition: .2s all ease-out;
+		}
+		a.relatedsite_btn {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 42px;
+			height: 40px;
+			background-color: #000;
+			border: 1px solid #454646;
+			color: #fff;
+			font-size: 14px;
+			text-align: center;
+			line-height: 38px;
+			-webkit-transition: .2s all ease-out;
+			-moz-transition: .2s all ease-out;
+			-ms-transition: .2s all ease-out;
+			-o-transition: .2s all ease-out;
+			transition: .2s all ease-out;
+		}
+		.relatedsites_wrap .opt_list {
+			position: absolute;
+			bottom: 100%;
+			right: 0;
+			left: 0;
+			background-color: #eee;
+			border: 1px solid #454646;
+			border-bottom: 0;
+			display: none;
+		}
+		.relatedsites_wrap .opt_list li {
+			border-top: 1px solid #ccc;
+		}
+		.relatedsites_wrap .opt_list li:first-child {
+			border-top: 0;
+		}
+		.relatedsites_wrap .opt_list li a {
+			display: block;
+			font-size: 14px;
+			color: #222;
+			font-weight: 300;
+			padding: 6px 19px;
+		}
+		.relatedsites_wrap.on > a:not(.relatedsite_btn) {
+			background: #fff url(/skill/assets/img/sk04-dropdown02/icon_arrow_down_black.png) no-repeat right 60px center;
+			border-radius: 0;
+		}
+		.relatedsites_wrap.on + a.relatedsite_btn {
+			border-radius: 0;
+		}
+		@media screen and (min-width: 1201px) {
+			.relatedsites_wrap:not(.on) > a:not(.relatedsite_btn):hover {
+				background: #f7f7f7 url(/skill/assets/img/sk04-dropdown02/icon_arrow_down_black.png) no-repeat right 60px center;
+			}
+			a.relatedsite_btn:hover {
+				background-color: #333;
+			}
+			.relatedsites_wrap .opt_list li a:hover {
+				background-color: #ddd;
+			}
+			.footer_terms li a:hover {
+				color: #666;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			.relsite_outwarp {
+				position: relative;
+				top: auto;
+				right: auto;
+				margin-top: 20px;
+			}
+			.relatedsites_wrap {
+				width: 100%;
+			}
+			.relatedsites_wrap > a:not(.relatedsite_btn) {
+				font-size: 12px;
+				padding: 8px 15px;
+				background-position: right 40px center;
+			}
+			.relatedsites_wrap.on > a:not(.relatedsite_btn) {
+				background-position: right 40px center;
+			}
+			.relatedsites_wrap .opt_list li a {
+				font-size: 12px;
+				padding: 5px 15px;
+			}
+			a.relatedsite_btn {
+				width: 30px;
+				height: 30px;
+				font-size: 12px;
+				line-height: 28px;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<div class="relsite_outwarp">
+			<div class="relatedsites_wrap custom_select slideup">
+				<a href="#"><span class="helper">관련 사이트</span></a>
+				<ul class="opt_list">
+					<li><a href="#" target="_blank" title="새창으로 이동">Dropdown Menu 01</a></li>
+					<li><a href="#" target="_blank" title="새창으로 이동">Dropdown Menu 02</a></li>
+					<li><a href="#" target="_blank" title="새창으로 이동">Dropdown Menu 03</a></li>
+					<li><a href="#" target="_blank" title="새창으로 이동">Dropdown Menu 04</a></li>
+					<li><a href="#" target="_blank" title="새창으로 이동">Dropdown Menu 05</a></li>
+				</ul>
+			</div>
+			<a href="#" class="relatedsite_btn">GO</a>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$(function(){
+			var $cs = $(".custom_select"),
+				$sca = $(".custom_select > a");
+			var drt = 200;
+			if( $cs.length > 0 ){
+				$cs.each(function(){
+					var _default = $(this).find(".helper");
+					$(this).children("a").on("click",function(e){
+						e.preventDefault();
+						var _ = $(this),
+							_opt = _.parent(".custom_select").find(".opt_list");
+						_opta = _opt.children("li").children("a");
+						_.parent(".custom_select").addClass("on");
+						if( _opt.css("display") != "block" ){
+							setTimeout(function(){
+								_opt.stop().slideDown(drt);
+							}, drt);
+						}else if ( _opt.css("display") == "block" ){
+							_opt.stop().slideUp(drt,function(){
+								_.parent(".custom_select").removeClass("on");
+							});
+						}
+						_.parent(".custom_select").parent(".header_util__input_box").toggleClass("on");
+
+						_opta.on("click",function(e){
+							e.preventDefault();
+
+							var _ = $(this);
+							var _link = _.attr("href");
+							var _val = _.html();
+							//console.log(_default.text() + "  ==?   " + _val);
+							//console.log(_default.text() == _val);
+							_.parents(".custom_select").children("a").html("<span class='helper'>"+_val+"</span>");
+							_.parents(".custom_select").children("a").attr("href", _link );
+
+							_opt.stop().slideUp(drt,function(){
+								if( _default.text() != _val && _opt.children(".default").length == 0 ){
+									// _opt.prepend("<li class='default'><a href='#'>" + _default.html() + "</a></li>");
+								}
+								_.parents(".custom_select").removeClass("on");
+							});
+							$(".header_util__input_box").removeClass("on");
+						});
+					});
+					if( $(this).next(".relatedsite_btn").length > 0 ){
+						var $smoveb = $(".relatedsite_btn");
+						$smoveb.on("click",function(e){
+							e.preventDefault();
+							var _ = $(this);
+							var _link = _.prev(".relatedsites_wrap").children("a").attr("href");
+							if( _link != "#" ){
+								window.open( _link , '_blank');
+							}
+						});
+					}
+				});
+			}
+		});
+	</script>
+</body>
+</html>

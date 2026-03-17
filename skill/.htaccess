@@ -1,0 +1,5 @@
+# 디렉토리 파일 목록 표시 차단
+Options -Indexes
+
+# 모든 접근 차단
+Require all denied

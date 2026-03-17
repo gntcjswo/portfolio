@@ -1,10 +1,12 @@
 @charset "UTF-8";
+@use "sass:color";
 
 $skin: '/assets';
 
 // color
 $color-base: #e51550;       // 기업 아이덴티티 색
-$color-base-hover: lighten($color-base, 5%); // 버튼일시 hover 배경색
+// $color-base-hover: lighten($color-base, 5%); // 버튼일시 hover 배경색
+$color-base-hover: color.adjust($color-base, $lightness: 5%); // 버튼일시 hover 배경색
 $color-base-hover-alpha: rgba($color-base, .7); // 버튼일시 hover 배경색 불투명 스타일
 $color-point: #ff0302;      // 강조색
 $font-color-base: #151515;     // 일반 글자색 => 메뉴색

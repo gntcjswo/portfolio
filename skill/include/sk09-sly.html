@@ -1,0 +1,244 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="/skill/assets/lib/sly/sly.min.js"></script>
+	<style>
+		.brand_list_wrap {
+			padding: 0 20px;
+		}
+		.brand_list_wrap .ctn {
+			max-width: 1780px;
+			margin: 0 auto;
+		}
+		.brand_list__ul {
+			overflow: hidden;
+			padding: 4px 0;
+		}
+		.brand_list__ul__li {
+			float: left;
+			width: 300px;
+			height: 100%;
+			margin: 0;
+			padding: 0 20px 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.brand_list__ul__li.active {
+			/* box-shadow: 0 -4px 0 0 #2049be; */
+		}
+		.brand_list__ul__li__thumb {
+			font-size: 0;
+		}
+		.brand_list__ul__li__thumb img {
+			width: auto;
+			max-width: 100%;
+		}
+		.brand_list__ul__li__category {
+			font-size: 14px;
+			font-weight: 500;
+			color: #2049be;
+		}
+		.brand_list__ul__li__tit {
+			font-size: 20px;
+			font-weight: 500;
+			color: #222;
+			margin-top: 10px;
+		}
+		.brand_list__ul__li__txt {
+			font-size: 15px;
+			font-weight: 300;
+			font-weight: 350;
+			color: #666;
+			word-break: keep-all;
+		}
+		.scrollbar {
+			max-width: 360px;
+			height: 2px;
+			background: #ddd;
+			line-height: 0;
+			margin: 40px auto 25px;
+		}
+		.scrollbar .handle {
+			width: 100px;
+			height: 100%;
+			background: none;
+			cursor: pointer;
+		}
+		.scrollbar .handle .mousearea {
+			position: absolute;
+			top: -3px;
+			left: 0;
+			width: 100%;
+			height: 8px;
+			background: #222;
+			border-radius: 5px;
+		}
+		.brand_controls {
+			text-align: center;
+			font-size: 0;
+		}
+		.btn_brand {
+			display: inline-block;
+			width: 64px;
+			height: 64px;
+			vertical-align: top;
+			font-size: 0;
+			text-indent: -9999px;
+			color: transparent;
+			margin: 0 10px;
+			border-radius: 50%;
+			outline: none;
+		}
+		.btn_brand.prevPage {
+			background: rgba(0,0,0,.1) url(/skill/assets/img/sk09-sly/icon_brand_controls_prev.png) no-repeat center;
+		}
+		.btn_brand.nextPage {
+			background: rgba(0,0,0,.1) url(/skill/assets/img/sk09-sly/icon_brand_controls_next.png) no-repeat center;
+		}
+		@media screen and (min-width: 1201px) {
+			.btn_brand.prevPage:hover,
+			.btn_brand.nextPage:hover {
+				background-color: rgba(0,0,0,.3);
+			}
+		}
+		@media screen and (max-width: 767px) {
+
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<div class="brand_list_wrap">
+			<div class="ctn">
+				<ul class="brand_list__ul">
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-01-si901.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-02-si380.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-03-si911.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-04-si911c.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-05-mc1000.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-06-mc2000n.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-07-si200g.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-08-si300.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-09-fm007.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+					<li class="brand_list__ul__li">
+						<div class="brand_list__ul__li__thumb"><img src="/skill/assets/img/sk09-sly/product-10-jb01c.jpg" alt="thumnail image"></div>
+						<p class="brand_list__ul__li__category">제품 카테고리</p>
+						<p class="brand_list__ul__li__tit">제품 타이틀</p>
+						<p class="brand_list__ul__li__txt">제품 설명</p>
+					</li>
+				</ul>
+			</div>
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+			<div class="brand_controls">
+				<button class="btn_brand prevPage">Prev page</button>
+				<button class="btn_brand nextPage">Next page</button>
+			</div>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		if($('.brand_list_wrap').length != 0) {
+			if($(window).width() <= 520) {
+				$('.brand_list__ul__li').css('width', $(window).width() - 40);
+			}
+
+			var $frame = $('.ctn');
+			var $wrap  = $frame.parent();
+
+			$frame.sly({
+				horizontal: 1,
+				itemNav: 'centered',
+				smart: 1,
+				activateOn: 'click',
+				mouseDragging: 1,
+				touchDragging: 1,
+				releaseSwing: 1,
+				startAt: 1,
+				scrollBar: $wrap.find('.scrollbar'),
+				scrollBy: 1,
+				speed: 300,
+				elasticBounds: 1,
+				// easing: 'easeOutExpo',
+				dragHandle: 1,
+				dynamicHandle: 1,
+				clickBar: 1,
+
+				// Buttons
+				// prev: $wrap.find('.prev'),
+				// next: $wrap.find('.next'),
+				prevPage: $wrap.find('.prevPage'),
+				nextPage: $wrap.find('.nextPage')
+			});
+		}
+		
+		$(window).resize(function(){
+			if($('.brand_list_wrap').length != 0) {
+				var $frame = $('.ctn');
+				$frame.sly('reload');
+				if($(window).width() <= 520) {
+					$('.brand_list__ul__li').css('width', $(window).width() - 40);
+				}else{
+					$('.brand_list__ul__li').css('width', 300);
+				}
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/skill/assets/lib/aos/aos.css" />
+	<script type="text/javascript" src="/skill/assets/lib/aos/aos.js"></script>
+	
+	<style>
+		.table_tit {
+			font-size: 22px;
+			color: #0d5283;
+			font-weight: 700;
+			margin: 70px 0 15px;
+		}
+
+		.table_tit:first-child {
+			margin-top: 0;
+		}
+
+		.dtable {
+			position: relative;
+			overflow-x: auto;
+		}
+
+		.dtable table {
+			border-top: 2px solid #5e5e5e;
+			text-align: center;
+			width: 100%;
+			min-width: 668px;
+		}
+
+		.dtable table tr {
+			border-bottom: 1px solid #c6c6c6;
+		}
+
+		.dtable table th,
+		.dtable table td {
+			padding: 15px 20px;
+			word-break: keep-all;
+			border-right: 1px solid #dadada;
+			font-size: 16px;
+			line-height: 1.7;
+		}
+
+		.dtable table tr th:last-child,
+		.dtable table tr td:last-child {
+			border-right: 0;
+		}
+
+		.dtable table th {
+			color: #333;
+			font-weight: 500;
+			background-color: #f8f8f8;
+		}
+
+		.dtable table td {
+			;
+			color: #333;
+			background-color: #fff;
+		}
+
+		.dtable table td.bg_bl {
+			background-color: #ebf1f7;
+		}
+
+		.dtable table thead th {
+			border-right: 0;
+		}
+
+		@media screen and (max-width: 767px) {
+			.table_tit {
+				font-size: 18px;
+				margin: 40px 0 15px;
+			}
+
+			.dtable table th,
+			.dtable table td {
+				padding: 10px 15px;
+				font-size: 14px;
+			}
+		}
+
+		.scroll_msg {
+			color: #105aa3;
+			font-weight: 700;
+			padding-left: 5px;
+			font-size: 24px;
+			position: absolute;
+			top: 50px;
+			left: 50%;
+			width: 250px;
+			margin-left: -150px;
+			background-color: rgba(204, 230, 255, 0.5);
+			text-align: center;
+			padding: 10px 0;
+			border-radius: 15px;
+			border: 3px solid #fff;
+			box-shadow: 2px 2px 2px -1px rgba(0, 0, 0, 0.6);
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		.scroll_msg.aos-animate {
+			-webkit-animation-duration: 3s;
+			-webkit-animation-name: slidein;
+			animation-duration: 3s;
+			animation-name: slidein;
+		}
+
+		@media screen and (max-width: 725px) {
+			-webkit-@keyframes slidein {
+				0% {
+					margin-left: -150px;
+					opacity: 1;
+				}
+
+				25% {
+					margin-left: -100px;
+				}
+
+				50% {
+					margin-left: -150px;
+				}
+
+				75% {
+					margin-left: -100px;
+					opacity: 1;
+				}
+
+				100% {
+					margin-left: -125px;
+					opacity: 0;
+				}
+			}
+
+			@keyframes slidein {
+				0% {
+					margin-left: -150px;
+					opacity: 1;
+				}
+
+				25% {
+					margin-left: -100px;
+				}
+
+				50% {
+					margin-left: -150px;
+				}
+
+				75% {
+					margin-left: -100px;
+					opacity: 1;
+				}
+
+				100% {
+					margin-left: -125px;
+					opacity: 0;
+				}
+
+			}
+
+			[data-aos^=hide][data-aos^=hide] {
+				opacity: 1;
+				-webkit-transition-property: opacity, transform;
+				-ms-transition-property: opacity, transform;
+				transition-property: opacity, transform;
+			}
+
+			[data-aos^=hide][data-aos^=hide].aos-animate {
+				opacity: 0;
+				-webkit-transform: translate(0);
+				-ms-transform: translate(0);
+				transform: translate(0);
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<h3 class="table_tit" data-aos="fade-left">강재의 분류</h3>
+		<div class="dtable type_ver_mid" data-aos="fade">
+			<div class="scroll_msg" data-aos="hide">좌/우로 스크롤</div>
+			<table>
+				<colgroup>
+					<col style="width:12%" />
+					<col style="width:18%" />
+					<col style="" />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>구분</th>
+						<th>종류</th>
+						<th class="t_l">내용</th>
+					</tr>
+					<tr>
+						<th rowspan="3">성분</th>
+						<td class="bg_bl">순철</td>
+						<td class="t_l">탄소함유량이 0.02%미만, 불순물이 적은 철</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">선철</td>
+						<td class="t_l">탄소함유량이 2.5-4.5%, 철광석을 제련하여 맨 처음 얻어지는 것</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">강철</td>
+						<td class="t_l">탄소함유량이 0.02-2.0%, 선철을 정련한 강</td>
+					</tr>
+					<tr>
+						<th rowspan="2">용도</th>
+						<td class="bg_bl">일반강</td>
+						<td class="t_l">일반 구조용강으로 C(0.1-0.9%) 이외에 소량의 Si, Mn, P, S 등을 함유한 강</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">특수강(합금강)</td>
+						<td class="t_l">공구강, 기계 구조용강, 특수용도강으로 함유 원소(Cr, Ni, Mo, V) 등을 첨가시킨 강</td>
+					</tr>
+					<tr>
+						<th rowspan="4">제조법</th>
+						<td class="bg_bl">열간 압연 제품</td>
+						<td class="t_l">제강된 반제품을 재결정 온도이상(800~1200℃)에서 압연, 인발 등에 의해 제품화한 것</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">냉간 압연 제품</td>
+						<td class="t_l">열간 압연 제품을 더 가공해서 제품화하기 위하여 재결정 온도 이하 (800℃ 이하)에서 냉간 압연한 것</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">주강품</td>
+						<td class="t_l">소정의 형상틀에 주물을 부어 일정 형상으로 가공한 제품</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">단강품</td>
+						<td class="t_l">소정의 재료를 단조를 통하여 제품화한 것</td>
+					</tr>
+					<tr>
+						<th rowspan="3">형상</th>
+						<td class="bg_bl">봉형강류</td>
+						<td class="t_l">형강(H.ㄱ.ㄷ.T.I 형강, 레일, 구평 형강, SHEET PILE 등), 봉강(원형강, 각강, 육각, 팔각강, 이형 봉강 등), 선재(원형, 이형)</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">강판류</td>
+						<td class="t_l">후판, 중판, 열연. 냉연 박판, 표면 처리 강판 등</td>
+					</tr>
+					<tr>
+						<td class="bg_bl">강관류</td>
+						<td class="t_l">무계목 강관, 용접 강관, 단접관</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$(function(){
+			AOS.init();
+		});
+	</script>
+</body>
+</html>

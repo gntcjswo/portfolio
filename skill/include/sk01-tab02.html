@@ -1,0 +1,251 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/skill/assets/lib/aos/aos.css" />
+	<script type="text/javascript" src="/skill/assets/lib/aos/aos.js"></script>
+
+	<style>
+		.sub-tab-wrap {}
+		.sub-tab {}
+		.sub-tab > ul {
+			font-size: 0;
+			display: flex;
+			flex-wrap: wrap;
+			border-bottom: 1px solid #007bb1;
+		}
+		.sub-tab > ul > li {
+			display: inline-block;
+			vertical-align: top;
+			min-width: 90px;
+			flex: auto;
+			max-width: 216px;
+			margin-bottom: -1px;
+		}
+		.sub-tab > ul > li + li {
+			margin-left: -1px;
+		}
+		.sub-tab > ul > li > a {
+			display: block;
+			background-color: #f2f2f2;
+			color: #555;
+			font-size: 20px;
+			font-weight: 400;
+			text-align: center;
+			padding: 14px;
+			border: 1px solid #ccc;
+			border-bottom: 1px solid #007bb1;
+		}
+		.sub-tab > ul > li > a.on {
+			background: #007bb1;
+			background: -webkit-linear-gradient(-45deg, #007bb1, #005b83);
+			background: -moz-linear-gradient(-45deg, #007bb1, #005b83);
+			background: -ms-linear-gradient(-45deg, #007bb1, #005b83);
+			background: -o-linear-gradient(-45deg, #007bb1, #005b83);
+			background: linear-gradient(to right bottom, #007bb1, #005b83);
+			color: #fff;
+		}
+		.sub-tab__conts {
+			padding-top: 40px;
+		}
+		.sub-tab__conts > ul {}
+		.sub-tab__conts > ul > li {
+			display: block;
+		}
+		.sub-tab__conts > ul > li:not(:first-child) {
+			display: none;
+		}
+		.sub-tab__conts__inner {
+
+		}
+		
+		@media screen and (min-width: 1201px) {
+			.sub-tab > ul > li > a:hover {
+				background-color: #007bb1;
+				color: #fff;
+			}
+		}
+		@media screen and (max-width: 1200px) {
+
+		}
+		@media screen and (max-width: 767px) {
+			.sub-tab > ul {
+				border-bottom: 0;
+			}
+			.sub-tab > ul > li {
+				padding: 3px;
+				max-width: 100%;
+			}
+			.sub-tab > ul > li > a {
+				font-size: 12px;
+				padding: 7px;
+			}
+			.sub-tab__conts {
+				padding-top: 20px;
+			}
+		}
+		
+		/* sub-tab tyoe02 style */
+		.sub-tab-wrap.type02 .sub-tab {}
+		.sub-tab-wrap.type02 .sub-tab > ul {
+			border-bottom: 0;
+		}
+		.sub-tab-wrap.type02 .sub-tab > ul > li {
+			max-width: 100%;
+		}
+		.sub-tab-wrap.type02 .sub-tab > ul > li > a {
+			background-color: #fff;
+			font-size: 17px;
+			color: #007bb1;
+			border-color: #007bb1;
+		}
+		.sub-tab-wrap.type02 .sub-tab > ul > li.on > a,
+		.sub-tab-wrap.type02 .sub-tab > ul > li > a.on {
+			background: #007bb1;
+			color: #fff;
+		}
+		.sub-tab-wrap.type02 .sub-tab__conts {
+
+		}
+		.sub-tab-wrap.type02 .sub-tab__conts > ul {}
+		.sub-tab-wrap.type02 .sub-tab__conts > ul > li {
+
+		}
+		.sub-tab-wrap.type02 .sub-tab__conts > ul > li:not(:first-child) {
+
+		}
+		.sub-tab-wrap.type02 .sub-tab__conts__inner {
+
+		}
+		@media screen and (min-width: 1201px) {
+			.sub-tab-wrap.type02 .sub-tab > ul > li > a:hover {
+				background-color: #007bb1;
+				color: #fff;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			.sub-tab-wrap.type02 .sub-tab > ul > li > a {
+				font-size: 12px;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<div class="sub-tab-wrap">
+			<div class="sub-tab">
+				<ul>
+					<li><a href="#sub-tab" class="sub-tab01 on">tab01</a></li>
+					<li><a href="#sub-tab" class="sub-tab02">tab02</a></li>
+					<li><a href="#sub-tab" class="sub-tab03">tab03</a></li>
+					<li><a href="#sub-tab" class="sub-tab04">tab04</a></li>
+				</ul>
+			</div>
+			<div class="sub-tab__conts" data-aos="fade" data-aos-delay="100">
+				<ul>
+					<li class="sub-tab01">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab01
+							</h2>
+						</div>
+					</li>
+					<li class="sub-tab02">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab02
+							</h2>
+						</div>
+					</li>
+					<li class="sub-tab03">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab03
+							</h2>
+						</div>
+					</li>
+					<li class="sub-tab04">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab04
+							</h2>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="sub-tab-wrap type02" style="margin-top: 40px;">
+			<div class="sub-tab">
+				<ul>
+					<li data-aos="fade-up" data-aos-delay="0"><a href="#sub-tab" class="sub-tab01 on">tab01</a></li>
+					<li data-aos="fade-up" data-aos-delay="50"><a href="#sub-tab" class="sub-tab02">tab02</a></li>
+					<li data-aos="fade-up" data-aos-delay="100"><a href="#sub-tab" class="sub-tab03">tab03</a></li>
+					<li data-aos="fade-up" data-aos-delay="150"><a href="#sub-tab" class="sub-tab04">tab04</a></li>
+				</ul>
+			</div>
+			<div class="sub-tab__conts" data-aos="fade" data-aos-delay="100">
+				<ul>
+					<li class="sub-tab01">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab01
+							</h2>
+						</div>
+					</li>
+					<li class="sub-tab02">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab02
+							</h2>
+						</div>
+					</li>
+					<li class="sub-tab03">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab03
+							</h2>
+						</div>
+					</li>
+					<li class="sub-tab04">
+						<div class="sub-tab__conts__inner">
+							<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+								tab04
+							</h2>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$(function(){
+			$('.sub-tab-wrap').each(function(){
+				var _this = $(this);
+				var _btn = _this.find('.sub-tab > ul li a');
+				_btn.on('click', function(e){
+					e.preventDefault();
+					var i = $(this).attr('class');
+					i = i.replace(/\s+/g, '').split('on');
+					i = i[0];
+					_btn.not(this).removeClass('on');
+					$(this).addClass('on');
+					_this.find('.sub-tab__conts > ul > li:not(.' + i + ')').hide();
+					_this.find('.sub-tab__conts > ul > li.' + i).fadeIn(200);
+				});
+			});
+
+			AOS.init();
+		});
+	</script>
+</body>
+</html>

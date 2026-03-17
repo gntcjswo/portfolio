@@ -1,0 +1,4 @@
+legacy/**
+.github/**
+deploy/**
+node_modules/**

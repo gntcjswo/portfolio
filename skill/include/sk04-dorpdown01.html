@@ -1,0 +1,131 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+
+	<style>
+		.familySite {
+			position: relative;
+			background: #121212;
+			z-index: 1;
+			border: 1px solid #333;
+			margin-top: 200px;
+			max-width: 220px;
+		}
+
+		.familySite.on {
+			background: #232323;
+		}
+
+		.familySite>header {
+			height: 46px;
+		}
+
+		.familySite h3 {
+			box-sizing: border-box;
+			background: url(/skill/assets/img/sk04-dorpdown01/plus_icon.png) no-repeat right 20px center;
+			background-size: 16px;
+		}
+
+		.familySite h3 a {
+			color: #adb2bc;
+			display: block;
+			font-size: 14px;
+			padding: 13px 50px 13px 20px;
+			text-align: left;
+		}
+
+		.familySite .footSelect {
+			position: absolute;
+			bottom: 46px;
+			left: -1px;
+			right: -1px;
+			background-color: #fff;
+		}
+
+		.footSelect ul {
+			overflow: hidden;
+			display: none;
+			border: 1px solid #afafaf;
+		}
+
+		.familySite li {
+			padding: 0;
+			border-bottom: 1px solid #afafaf;
+		}
+
+		.familySite li:last-child {
+			border-bottom: 0;
+		}
+
+		.footSelect ul li a {
+			display: block;
+			color: #333;
+			padding: 13px 20px;
+			font-size: 14px;
+		}
+
+		@media screen and (min-width: 1201px) {
+			.familySite h3:hover {
+				background: #333 url(/skill/assets/img/sk04-dorpdown01/plus_icon.png) no-repeat right 20px center;
+				background-size: 16px;
+			}
+
+			.footSelect ul li a:hover {
+				background-color: #f7f7f7;
+			}
+		}
+		
+		@media screen and (max-width:767px) {
+			.familySite {
+				margin: 20px auto 0;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<aside class="familySite">
+			<header>
+				<h3><a href="#familysite" class="familySite-select">회원사 바로가기</a></h3>
+			</header>
+			<div class="footSelect">
+				<ul>
+					<li><a href="#" target="_blank">dropdown menu 01</a></li>
+					<li><a href="#" target="_blank">dropdown menu 02</a></li>
+					<li><a href="#" target="_blank">dropdown menu 03</a></li>
+					<li><a href="#" target="_blank">dropdown menu 04</a></li>
+					<li><a href="#" target="_blank">dropdown menu 05</a></li>
+				</ul>
+			</div>
+		</aside>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$(function(){
+			$('.familySite').on('click', function(){
+				if($(this).hasClass('on')){
+					$(this).removeClass('on');
+					$(".footSelect > ul").slideUp();
+				}else{
+					$(this).addClass('on');
+					$(".footSelect > ul").slideDown();
+				}
+			});
+			$(document).click(function(event) {
+				if (!$(event.target).closest('.familySite').length) {
+					$('.familySite').removeClass('on');
+					$(".footSelect > ul").slideUp();
+				}
+			});
+		});
+	</script>
+</body>
+</html>

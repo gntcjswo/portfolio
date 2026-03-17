@@ -1,0 +1,140 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="/skill/assets/lib/aos/aos.css" />
+	<script type="text/javascript" src="/skill/assets/lib/aos/aos.js"></script>
+	
+	<style>
+		.tab_btn_box {}
+
+		.tab_btn_box>ul {
+			overflow: hidden;
+			border: 1px solid #cecece;
+			display: flex;
+			height: 60px;
+		}
+
+		.tab_btn_box>ul>li {
+			background-color: #f8f8f8;
+			font-size: 16px;
+			font-weight: 500;
+			color: #434343;
+			text-align: center;
+			float: left;
+			border-right: 1px solid #cecece;
+			display: flex;
+			width: 100%;
+			align-items: center;
+			cursor: pointer;
+		}
+
+		.tab_btn_box>ul>li.current {
+			background-color: #1d3b6d;
+			font-weight: 700;
+			color: #fff;
+		}
+
+		.tab_btn_box>ul>li:last-child {
+			border-right: 0;
+		}
+
+		.tab_btn_box>ul>li>a {
+			display: block;
+			padding: 20px 0;
+			flex: 1;
+			padding: 0 5px;
+			word-break: break-all;
+		}
+
+		.tab_content_box {
+			margin-top: 60px;
+		}
+
+		.tabcontent {
+			display: none;
+		}
+
+		.tabcontent.current {
+			display: block;
+		}
+
+		.tabcontent>ul {
+			border-top: 2px solid #616161;
+		}
+
+		.tabcontent>ul>li {
+			padding: 40px 0;
+			border-bottom: 1px dashed #cecece;
+			font-size: 0;
+		}
+
+		@media screen and (max-width: 767px) {
+			.tab_btn_box>ul>li {
+				font-size: 13px;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<div class="tab_btn_box">
+			<ul>
+				<li class="current" data-tab="tab1"><a href="#tabcontent1">tab01</a></li>
+				<li data-tab="tab2"><a href="#tabcontent2">tab02</a></li>
+				<li data-tab="tab3"><a href="#tabcontent3">tab03</a></li>
+			</ul>
+		</div>
+
+		<div class="tab_content_box">
+
+			<div id="tab1" class="tabcontent current">
+				<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+					tab01
+				</h2>
+			</div>
+
+			<div id="tab2" class="tabcontent">
+				<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+					tab02
+				</h2>
+			</div>
+
+			<div id="tab3" class="tabcontent">
+				<h2 data-aos="fade-left" style="font-size: 20px;font-weight: 700;text-align: center;">
+					tab03
+				</h2>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$(function(){
+			$('.tab_btn_box > ul > li').click(function(e) {
+				e.preventDefault();
+				var activeTab = $(this).attr('data-tab');
+				$('.tab_btn_box > ul > li').removeClass('current');
+				$('.tabcontent').removeClass('current');
+				$('.tabcontent').hide();
+				$(this).addClass('current');
+				// $('#' + activeTab).addClass('current');
+				$('[data-aos^="fade"]').removeClass('aos-animate');
+				$('#' + activeTab).fadeIn();
+
+				AOS.refresh();
+			});
+			
+			AOS.init();
+		});
+	</script>
+</body>
+</html>

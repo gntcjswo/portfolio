@@ -1,0 +1,323 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+	
+	<style>
+		.type-bullet {
+			margin-top: 20px;
+		}
+		.type-bullet li {
+			position: relative;
+			display: block;
+			width: 100%;
+			font-size: 14px;
+			font-weight: 300;
+			color: #3b3b3b;
+			padding: 0;
+			padding-left: 10px;
+		}
+		.type-bullet li:before {
+			content: "";
+			position: absolute;
+			top: 9px;
+			left: 0;
+			width: 2px;
+			height: 2px;
+			background-color: #666;
+		}
+		@media screen and (max-width: 767px) {
+			.type-bullet {
+				margin-top: 10px;
+			}
+			.type-bullet li {
+				font-size: 12px;
+			}
+			.type-bullet li:before {
+				top: 8px;
+			}
+		}
+		
+		.sub-tab-wrap {}
+		.sub-tab {}
+		.sub-tab > ul {
+			font-size: 0;
+			margin: 0 -3px;
+
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.sub-tab > ul > li {
+			display: inline-block;
+			padding: 0 3px;
+			vertical-align: top;
+			min-width: 90px;
+			margin-bottom: 10px;
+
+			flex: auto;
+		}
+		.sub-tab > ul > li > a {
+			display: block;
+			background-color: rgba(100, 101, 207, .5);
+			color: #fff;
+			font-size: 15px;
+			font-weight: 300;
+			border-radius: 6px;
+			text-align: center;
+			padding: 5px;
+		}
+		.sub-tab > ul > li > a.on {
+			background-color: rgba(100, 101, 207, 1);
+		}
+		.sub-tab__conts {}
+		.sub-tab__conts > ul {}
+		.sub-tab__conts > ul > li {
+			display: block;
+		}
+		.sub-tab__conts > ul > li:not(:first-child) {
+			display: none;
+		}
+		.sub-tab__conts__inner {
+			background-color: #EDEFF3;
+			border-radius: 12px;
+			padding: 20px;
+		}
+		.sub-tab__tit {
+			font-size: 20px;
+			font-weight: 500;
+			color: #373737;
+		}
+		.type-bullet + .sub-tab__tit {
+			margin-top: 20px;
+		}
+		@media screen and (min-width: 1201px) {
+			.sub-tab > ul > li > a:hover {
+				background-color: rgba(100, 101, 207, 1);
+			}
+		}
+		@media screen and (max-width: 767px) {
+			.sub-tab-wrap {
+				display: flex;
+			}
+			.sub-tab {
+				width: 75px;
+				padding-right: 5px;
+			}
+			.sub-tab > ul {
+				margin: 0;
+			}
+			.sub-tab > ul > li {
+				min-width: 70px;
+				width: 70px;
+				padding: 0;
+				margin-bottom: 5px;
+			}
+			.sub-tab > ul > li:last-child {
+				margin-bottom: 0;
+			}
+			.sub-tab > ul > li > a {
+				font-size: 12px;
+			}
+			.sub-tab__conts {
+				width: 100%;
+			}
+			.sub-tab__conts > ul,
+			.sub-tab__conts > ul > li {
+				height: 100%;
+			}
+			.sub-tab__conts__inner {
+				height: 100%;
+				min-height: 193px;
+			}
+			.sub-tab__tit {
+				font-size: 14px;
+			}
+			.type-bullet + .sub-tab__tit {
+				margin-top: 10px;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<div class="sub-tab-wrap">
+			<div class="sub-tab">
+				<ul>
+					<li>
+						<a href="#sub-tab" class="on">Basic</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Essential</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 1</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 2</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 3</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 4</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 5</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 6</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 7</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Level 8</a>
+					</li>
+					<li>
+						<a href="#sub-tab">Dan Test</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sub-tab__conts">
+				<ul>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Class contents</p>
+							<ul class="type-bullet">
+								<li>Goal of coming to the dojang</li>
+								<li>Dojang etiquette</li>
+								<li>Stretching</li>
+								<li>Purpose of learning taekwondo</li>
+								<li>How to make a fist</li>
+								<li>Kihap</li>
+								<li>Basic preparatory stances</li>
+								<li>Applied basic preparatory stances</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="sub-tab__conts__inner">
+							<p class="sub-tab__tit">Sample Text</p>
+							<ul class="type-bullet">
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+								<li>Sample Text</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$(function(){
+			$('.sub-tab > ul li a').on('click', function(e){
+				e.preventDefault();
+				var i = $(this).parent('li').index();
+				$('.sub-tab > ul li a').not(this).removeClass('on');
+				$(this).addClass('on');
+				$('.sub-tab__conts > ul > li').hide();
+				$('.sub-tab__conts > ul > li').eq(i).fadeIn(200);
+			});
+		});
+	</script>
+</body>
+</html>

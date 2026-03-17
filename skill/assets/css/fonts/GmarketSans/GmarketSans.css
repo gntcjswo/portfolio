@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("GmarketSansLight"),
+    url(GmarketSansLight.eot),
+    url(GmarketSansLight.eot?#iefix) format("embedded-opentype"),
+    url(GmarketSansLight.woff) format("woff"),
+    url(GmarketSansLight.otf;) format("opentype");
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: 500;
+  src: local("GmarketSansMedium"),
+    url(GmarketSansMedium.eot),
+    url(GmarketSansMedium.eot?#iefix) format("embedded-opentype"),
+    url(GmarketSansMedium.woff) format("woff"),
+    url(GmarketSansMedium.otf) format("opentype");
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("GmarketSansBold"),
+    url(GmarketSansBold.eot?#iefix) format("embedded-opentype"),
+    url(GmarketSansBold.woff) format("woff"),
+    url(GmarketSansBold.otf) format("opentype");
+}

@@ -1,0 +1,417 @@
+<?php include 'sk-header.php';?>
+
+	<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+
+	<style>
+		.oper_accor {}
+
+		.oper_accor>ul {}
+
+		.oper_accor>ul>li {}
+
+		.oper_accor>ul>li.on {}
+
+		.oper_accor>ul>li>a {
+			position: relative;
+			padding: 20px 60px 20px 30px;
+			display: block;
+			border-bottom: 1px solid #d1d1d1;
+			background: #fff url(/skill/assets/img/sk02-accordian/accor_arrow.png) no-repeat center right 30px;
+			-webkit-transition: .2s all;
+			-ms-transition: .2s all;
+			transition: .2s all;
+			overflow: hidden;
+		}
+
+		.oper_accor>ul>li.on>a {
+			border-bottom: 1px solid #0998d3;
+			background: #f3fafd url(/skill/assets/img/sk02-accordian/accor_arrow_on.png) no-repeat center right 30px;
+		}
+
+		.oper_accor>ul>li>a span {
+			font-size: 18px;
+			font-weight: 700;
+			color: #7e7e7e;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.oper_accor>ul>li.on>a span {
+			color: #3b3b3b;
+		}
+
+		.oper_accor>ul>li>a span.oper_num {
+			color: #0a98d3;
+			margin-right: 20px;
+			width: 36px;
+		}
+
+		.oper_accor_2depth {
+			display: none;
+			padding: 35px 85px;
+			border-bottom: 1px solid #d1d1d1;
+		}
+
+		.oper_accor_2depth>li {}
+
+		.oper_content {}
+
+		.oper_content>h3 {
+			font-size: 16px;
+			color: #333;
+			font-weight: 500;
+			line-height: 1.7;
+		}
+
+		.oper_content>ul {
+			padding-left: 3px;
+			margin-bottom: 35px;
+		}
+
+		.oper_content>ul:last-child {
+			margin-bottom: 0;
+		}
+
+		.oper_content>ul>li {
+			font-size: 15px;
+			color: #333;
+			line-height: 1.7;
+		}
+		
+		@media screen and (min-width: 1201px) {
+			.oper_accor > ul > li > a:hover {
+				padding-left: 55px;
+			}
+			.oper_accor > ul > li > a:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: -12px;
+				margin-top: -6px;
+				width: 0;
+				height: 0;
+				border-top: 6px solid transparent;
+				border-bottom: 6px solid transparent;
+				border-left: 12px solid #8dccea;
+				-webkit-transition: .2s all;
+					-ms-transition: .2s all;
+						transition: .2s all;
+				opacity: 0;
+			}
+			.oper_accor > ul > li > a:hover:before {
+				left: 30px;
+				opacity: 1;
+			}
+		}
+		@media screen and (max-width: 767px) {
+			.oper_top {
+				padding: 10px 20px;
+			}
+
+			.oper_accor>ul>li>a {
+				padding: 10px 50px 10px 20px;
+				background-position: center right 20px;
+			}
+
+			.oper_accor>ul>li.on>a {
+				background-position: center right 20px;
+			}
+
+			.oper_accor>ul>li>a span {
+				font-size: 15px;
+			}
+
+			.oper_accor>ul>li>a span.oper_num {
+				margin-right: 10px;
+			}
+
+			.oper_accor_2depth {
+				padding: 20px;
+			}
+
+			.oper_content>h3 {
+				font-size: 15px;
+			}
+
+			.oper_content>ul {
+				margin-bottom: 20px;
+			}
+
+			.oper_content>ul>li {
+				font-size: 13px;
+				line-height: 1.5;
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<section id="wrap">
+
+		<div class="oper_accor">
+			<ul>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num">1장.</span><span>총칙</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 1 조 (명칭)</h3>
+								<ul>
+									<li>본 센터는 강구조센터라고 칭한다. 이하 『센터』라 한다.</li>
+								</ul>
+								<h3>제 2 조 (목적)</h3>
+								<ul>
+									<li>본 센터는 강구조 건설 분야 (건축, 토목, 주택)의 수요 확대와 경쟁력 향상을 위한 사업의 공동추진을 위하여 강재의 효율적 이용기술 개발보급 및 수요가에 대한 질적 서비스를 강화하고, 강재의 수요패턴 변화에 대응한 제도 및 기준 개선, 규격화 및 표준화, 강구조 교육개선 사업과 산학연 협력 지원사업 추진을 목적으로 한다.</li>
+								</ul>
+								<h3>제 3 조 (사무국)</h3>
+								<ul>
+									<li>본 센터는 한국철강협회 내에 사무국을 두며, 필요에 따라 국내외에 지부를 둘 수 있다.</li>
+								</ul>
+								<h3>제 4 조 (사업)</h3>
+								<ul>
+									<li>본 센터는 제2조의 목적을 달성하기 위하여 다음 각호의 사업을 수행한다.</li>
+									<li>① 강구조 건설 분야의 자료 및 정보 수집, 통계 정비, 수요분석 등 기초 조사 활동</li>
+									<li>② 산 학 연 협력 및 강구조 연구개발사업 지원</li>
+									<li>③ 각종 제도 및 기준 개선 보완 등</li>
+									<li>④ 표준화 및 규격화, 유지관리 보수에 관한 사항</li>
+									<li>⑤ 강구조 전문 교육 프로그램 개발 보급 운영</li>
+									<li>⑥ 정부, 유관기관과의 유기적 협조 및 지원 활동</li>
+									<li>⑦ 세미나, 기술 발표회, 설명회 개최 등 이용 기술 보급 활동</li>
+									<li>⑧ 저변확대를 위한 제반 PR 활동</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num">2장.</span><span>회원</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 5 조 (회원)</h3>
+								<ul>
+									<li>본 센터의 회원은 정회원, 특별회원으로 한다.</li>
+								</ul>
+								<h3>제 6 조 (자격)</h3>
+								<ul>
+									<li>본 센터의 회원은 정회원, 특별회원으로 한다.</li>
+									<li>① 정회원은 강구조 건설 분야 관련업계 (철강소재 생산업계, 건설업계, 설계업계, 철골제작업계, 건축자재 생산 및 가공업계 등) 로 한다.</li>
+									<li>② 특별회원은 본 센터의 목적 및 사업과 관련된 학계, 단체, 연구소 등으로 한다.</li>
+								</ul>
+								<h3>제 7 조 (입회 및 탈퇴)</h3>
+								<ul>
+									<li>① 본 센터에 가입하고자 하는자는 제 6조의 자격을 갖춘 자로서, 입회 신청서를 제출하여 사무국의 승인을 거쳐 회원이 되며, 가입 승인 시는 소정의 입회비를 납부하여야 하고, 사무국은 이사회에 추후 보고하여야 한다.</li>
+									<li>② 본 센터를 탈퇴하고자 하는 자는 탈퇴서를 사무국에 제출함으로서 탈퇴한 것으로 간주한다.</li>
+								</ul>
+								<h3>제 8 조 (회원의 권리 및 의무)</h3>
+								<ul>
+									<li>① 정회원은 본 센터에 대한 모든 권리를 균등하게 가지며 각 1개의 의결권을 갖는다.</li>
+									<li>② 본 센터의 운영요강 및 제 의결사항에 대한 성실한 의무를 갖는다.</li>
+									<li>③ 이사회가 정하는 입회금 및 회비의 납부의무 등을 갖는다.</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num">3장.</span><span>임원</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 9 조 (임원)</h3>
+								<ul>
+									<li>① 회장 1인</li>
+									<li>② 부회장 5인 이내</li>
+									<li>③ 이사 25인 이내 (회장, 부회장 포함)</li>
+									<li>④ 감사 1인</li>
+								</ul>
+								<h3>제 10 조 (임기와 보직승계)</h3>
+								<ul>
+									<li>① 임원의 임기는 2년으로 하되 연임할 수 있다.</li>
+									<li>② 회장이 단기간 유고 시는 회장이 지명하는 부회장이 직무를 대행한다.</li>
+									<li>③ 임원은 소속회사가 지정한 대표자로서 임원급 이상이어야 하며, 궐위 등 직무를 수행할 수 없을 시는 소속회사의 후임자가 임원보직을 자동 승계토록 하고, 소속회사는 변경사항을 즉시 센터사무국에 서면통보 하여야 한다.</li>
+									<li>④ 보직이 자동 승계된 임원의 임기는 전임자의 잔여 임기로 한다.</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num">4장.</span><span>이사회</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 11 조 (이사회의 기능)</h3>
+								<ul>
+									<li>이사회는 다음 사항을 심의 의결한다.</li>
+									<li>① 사업계획 및 예산, 결산, 심의</li>
+									<li>② 규정의 제정 및 개폐</li>
+									<li>③ 입회금 및 회비등 재정에 관한사항</li>
+									<li>④ 센터운영에 관한사항</li>
+									<li>⑤ 임원 선임 / 해임</li>
+									<li>⑥ 기타 필요한 사항</li>
+								</ul>
+								<h3>제 12 조 (소집)</h3>
+								<ul>
+									<li>① 년 2회</li>
+									<li>② 회장이 필요하다고 인정할 때</li>
+									<li>③ 이사 1/3이상의 요청이 있을 때 소집할 수 있다.</li>
+								</ul>
+								<h3>제 13 조 (의결방법)</h3>
+								<ul>
+									<li>① 이사 과반수이상 출석과 출석이사 과반수 찬성으로 의결한다.</li>
+									<li>② 회장이 유고 시는 회장이 지명한 부회장이 의장이 된다.</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num">5장.</span><span>위원회 운영 등</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 14 조 (위원회 운영)</h3>
+								<ul>
+									<li>① 본 센터는 이사회 산하에 필요시 각종 실무위원회를 둘 수 있다.</li>
+									<li>② 각 실무위원회는 업무 추진상 분야별?기능별로 소위원회를 구성?운영할 수 있다.</li>
+									<li>③ 본 센터 운영상 필요시 고문 및 자문위원을 둘 수 있다.</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num">6장.</span><span>예산 및 회계</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 15 조 (예산 및 회계)</h3>
+								<ul>
+									<li>① 본 센터 운영예산은 회원사의 회비 및 기타 수입으로 조달하며, 회비는 일반회비 및 특별회비로 구분한다.</li>
+									<li>② 회비 및 입회비 등의 결정은 이사회 심의에 의한다.</li>
+									<li>③ 회계처리는 한국철강협회의 회계 규정에 준하며 특별회계로 처리한다.</li>
+								</ul>
+								<h3>제 16 조 (회계년도)</h3>
+								<ul>
+									<li>본 센터의 회계년도는 매년 1월 1일부터 12월 31일까지로 한다.</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num">7장.</span><span>사무국</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 17 조 (사무국)</h3>
+								<ul>
+									<li>① 본 센터의 사무국은 한국철강협회 내에 두며, 협회 상근 임원의 당연직 사무국장 1인 및 요원을 둔다.</li>
+									<li>② 사무국은 다음 각호의 업무를 수행한다.</li>
+									<li>가. 사업계획안의 수립?집행 및 건의</li>
+									<li>나. 회의준비, 소집?진행 등에 관한 사항 </li>
+									<li>다. 회의록 작성 및 보관 </li>
+									<li>라. 회비징수 및 영수, 보관운영에 관한 사항 </li>
+									<li>마. 기타 센터업무와 관련된 사항</li>
+								</ul>
+								<h3>제 18 조 (기타)</h3>
+								<ul>
+									<li>본 요강에 정하지 아니한 사항은 한국철강협회의 제 규정에 준하여 처리한다.</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="#operation01">
+						<span class="oper_num"></span><span>부칙</span>
+					</a>
+					<ul class="oper_accor_2depth">
+						<li>
+							<div class="oper_content">
+
+								<h3>제 1 조 (시행)</h3>
+								<ul>
+									<li>본 요강은 2011년 3월 29일부터 시행한다.</li>
+								</ul>
+								<h3>제 2 조 (경과조치)</h3>
+								<ul>
+									<li>② 본 요강 시행당시 선임된 임원 및 임기는 본 요강에 의해 선임된 것으로 본다.</li>
+								</ul>
+
+							</div>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		$(function(){
+			operAccordian();
+		});
+		function operAccordian() {
+			$(".oper_accor>ul>li>a").unbind("click").bind("click",function(e){
+				e.preventDefault();
+				var _this = $(this);
+				$(".oper_accor>ul>li>a").not(this).parent().removeClass("on").children("ul").slideUp(200);
+				_this.parent().addClass("on").children("ul").slideToggle(200, function() {
+					if ($(this).css("display") == "none") {
+						$(this).parent().removeClass("on");
+					}else{
+						// var headerHeight = $("#header").outerHeight();
+						$("html,body").animate({
+							scrollTop: _this.offset().top // - headerHeight
+						});
+					}
+				});
+			});
+		}
+	</script>
+</body>
+</html>

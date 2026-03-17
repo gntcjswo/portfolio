@@ -35,6 +35,8 @@
     <meta name="twitter:image" content="http://base-css.woobi.co.kr/og_logo.jpg" />
     <meta name="twitter:description" content="웹퍼블리셔 우성 Works" />
 
+    <meta name="robots" content="noindex, nofollow">`
+
     <link rel="canonical" href="http://base-css.woobi.co.kr/" />
     <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -63,7 +65,8 @@
 
     <!-- ie css 변수적용 -->
     <script>
-      window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');
+      // window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');
+        window.MSInputMethodContext && document.documentMode && document.write('<script src="/assets/js/ie11CustomProperties.min.js"><\/script>');
     </script>
   </head>
 

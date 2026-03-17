@@ -1,0 +1,78 @@
+<?php include 'sk-header.php';?>
+
+<script type="text/javascript" src="/skill/assets/lib/jquery/jquery-3.2.1.min.js"></script>
+
+<style>
+	html.translated-ltr body,
+	html.translated-rtl body {
+		padding-top: 39px;
+	}
+</style>
+
+<script type="text/javascript">
+
+</script>
+</head>
+<body onload="translationLoad();">
+	<!-- wrap -->
+	<section id="wrap">
+
+		<style type="text/css">
+			iframe.goog-te-banner-frame { /* display: none !important; */ } /* 상단 플로팅 바 옵션 가리기 */
+			body { position: static !important; top:0px !important; }
+			.goog-logo-link { display:none !important; }
+			.goog-te-gadget { color: transparent !important; }
+		</style>
+		<script type="text/javascript">
+			function googleTranslateElementInit() {
+				new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,fr,ja,ru,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false, multilanguagePage: true}, 'google_translate_element');
+			}
+		</script>
+		<!-- <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>  -->
+		<script type="text/javascript" src="/skill/assets/lib/google-translate/google-translate-element.js"></script>
+		<script type="text/javascript">
+			function translationLoad() {
+
+				$('.translation-icons').css('visibility', 'visible');
+
+				$('.translation-icons a').click(function(e) {
+					e.preventDefault();
+					var placement = $(this).data('placement');
+					var lang_num = $('.translation-icons a').length;
+					var $frame = $('.goog-te-menu-frame:first');
+
+					/* if (!$frame.size()) {
+								alert("Error: Could not find Google translate frame.");
+								return false;
+							} */
+
+					var langs = $('.goog-te-menu-frame:first').contents().find('a span.text');
+
+					if(langs.length != lang_num) placement = placement+1;
+
+					langs.eq(placement).click();
+					return false;
+				});
+			};
+		</script>
+		<div id="google_translate_element" style="visibility: hidden; position: absolute; top: 0px;"></div>
+		<div class="translation-icons" style="visibility: hidden; position: relative; text-align: left; margin:0 auto;margin-left:20px; zoom:1">
+			<a href="#" class="ru" data-placement="0"> <img src="/skill/assets/img/sk07-google-translate/lang_flag_04_russian.jpg" alt='Russian'/></a>
+			<a href="#" class="es" data-placement="1"> <img src="/skill/assets/img/sk07-google-translate/lang_flag_05_spanish.jpg" alt='Spanish'/></a>
+			<a href="#" class="ar" data-placement="2"> <img src="/skill/assets/img/sk07-google-translate/lang_flag_01_arabic.jpg" alt='Arabic'/></a>
+			<a href="#" class="jp" data-placement="3"> <img src="/skill/assets/img/sk07-google-translate/lang_flag_03_japanese.jpg" alt='Japanese'/></a>
+			<a href="#" class="fr" data-placement="4"> <img src="/skill/assets/img/sk07-google-translate/lang_flag_02_french.jpg" alt='French'/></a>
+		</div>
+		
+		<div>
+			<p>구글 번역 기능입니다.</p>
+		</div>
+
+	</section>
+	<!-- // wrap -->
+
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>
