@@ -137,13 +137,13 @@ function js() {
 
 // JS lib 및 제외 파일 복사
 function jsLib() {
-  return gulp.src(paths.jsLib.src, { base: 'assets/js' })
+  return gulp.src(paths.jsLib.src, { base: 'assets/js', encoding: false })
     .pipe(gulp.dest(paths.jsLib.dest));
 }
 
 // 기타 assets 복사 (이미지, 폰트 등)
 function assets() {
-  return gulp.src(paths.assets.src, { base: 'assets' })
+  return gulp.src(paths.assets.src, { base: 'assets', encoding: false })
     .pipe(gulp.dest(paths.assets.dest));
 }
 
@@ -155,7 +155,7 @@ function robots() {
 
 // favicon 복사
 function favicon() {
-  return gulp.src(paths.favicon.src)
+  return gulp.src(paths.favicon.src, { encoding: false })
     .pipe(gulp.dest(paths.favicon.dest));
 }
 
