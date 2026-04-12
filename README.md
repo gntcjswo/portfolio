@@ -1,6 +1,6 @@
 # 웹 퍼블리셔 포트폴리오
 
-## NAS 서버
+## 서버
 
 [http://base-css.woobi.co.kr/](http://base-css.woobi.co.kr/)
 
