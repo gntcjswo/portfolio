@@ -448,6 +448,32 @@
     }
 }
 
+.github_box {
+    position: fixed;
+    bottom: -100px;
+    right: 20px;
+    z-index: 11;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4.375rem;
+        height: 4.375rem;
+        line-height: 1;
+        font-size: 1rem;
+        color: #fff;
+        text-align: center;
+        background-color: #000;
+        border-radius: 50%;
+        border: .125rem solid #fff;
+
+        &:hover {
+            background-color: #222;
+        }
+    }
+}
+
 .fix_section__bg {
     position: fixed;
     display: flex;
@@ -849,6 +875,10 @@
     .fix_section__portfolio {
         // top: auto;
         // bottom: 1.25rem;
+    }
+
+    .github_box {
+        display: none;
     }
     
     .feature_box {
