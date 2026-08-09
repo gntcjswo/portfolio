@@ -251,6 +251,10 @@ section00Motion.to('.fix_section', 0, {
 		right: '20px',
 		ease: 'power2.inOut'
 	}, '-=1')
+	.to('.github_box', 1, {
+		bottom: '20px',
+		ease: 'power2.inOut'
+	}, '-=1')
 	.to('.scroll_box', 1, {
 		autoAlpha: 1
 	}, '-=1');
